@@ -25,16 +25,16 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                      <Component id="Administrarclient" min="-2" max="-2" attributes="0"/>
+                      <Component id="admclientes" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                      <Component id="admarticulos" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                      <Component id="admfacturas" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="192" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="230" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -49,9 +49,9 @@
               <Component id="jLabel1" min="-2" pref="42" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Administrarclient" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
-                  <Component id="jButton2" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
-                  <Component id="jButton3" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                  <Component id="admclientes" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                  <Component id="admarticulos" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                  <Component id="admfacturas" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="57" max="32767" attributes="0"/>
           </Group>
@@ -59,13 +59,16 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="Administrarclient">
+    <Component class="javax.swing.JButton" name="admclientes">
       <Properties>
         <Property name="text" type="java.lang.String" value="Administrar Clientes"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AdministrarclientActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="admclientesActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
@@ -78,15 +81,21 @@
         <Property name="text" type="java.lang.String" value="Robono"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="admarticulos">
       <Properties>
         <Property name="text" type="java.lang.String" value="Administrar Articulos"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="admfacturas">
       <Properties>
         <Property name="text" type="java.lang.String" value="Administrar Facturas"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

@@ -27,17 +27,17 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Administrarclient = new javax.swing.JButton();
+        admclientes = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        admarticulos = new javax.swing.JButton();
+        admfacturas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Administrarclient.setText("Administrar Clientes");
-        Administrarclient.addActionListener(new java.awt.event.ActionListener() {
+        admclientes.setText("Administrar Clientes");
+        admclientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AdministrarclientActionPerformed(evt);
+                admclientesActionPerformed(evt);
             }
         });
 
@@ -45,9 +45,9 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         jLabel1.setText("Robono");
 
-        jButton2.setText("Administrar Articulos");
+        admarticulos.setText("Administrar Articulos");
 
-        jButton3.setText("Administrar Facturas");
+        admfacturas.setText("Administrar Facturas");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -57,13 +57,13 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(45, 45, 45)
-                        .addComponent(Administrarclient)
+                        .addComponent(admclientes)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2)
+                        .addComponent(admarticulos)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3))
+                        .addComponent(admfacturas))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(192, 192, 192)
+                        .addGap(230, 230, 230)
                         .addComponent(jLabel1)))
                 .addContainerGap(54, Short.MAX_VALUE))
         );
@@ -74,18 +74,18 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(77, 77, 77)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Administrarclient, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(admclientes, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(admarticulos, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(admfacturas, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AdministrarclientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdministrarclientActionPerformed
+    private void admclientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admclientesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_AdministrarclientActionPerformed
+    }//GEN-LAST:event_admclientesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -123,9 +123,9 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Administrarclient;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    public javax.swing.JButton admarticulos;
+    public javax.swing.JButton admclientes;
+    public javax.swing.JButton admfacturas;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
