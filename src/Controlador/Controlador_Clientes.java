@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,6 +20,9 @@ import java.awt.event.MouseListener;
 public class Controlador_Clientes implements ActionListener, MouseListener{
     
         Clientes clientes;
+        
+        //Creación del objeto para usar los métodos de clientes
+        //Metodos_Clientes mc = new Metodos_Clientes();
 
     Controlador_Clientes(Clientes clientes) {
         this.clientes = clientes;
@@ -39,8 +43,8 @@ public class Controlador_Clientes implements ActionListener, MouseListener{
             clientes.setLocationRelativeTo(null);
             clientes.setResizable(false);
             
-            //Aqui va la llamada al método para que nos impirma la tabla
-            //this.clientes.listaclientes.setModel(this.mg.mostrarDC(Metodos_empleado.getIdlogueado()));
+            //Aqui técnicamente te imprimiría la tabla de clientes
+            //this.clientes.listaclientes.setModel(this.mc.mostrarC());
             
             this.clientes.guardar.setActionCommand("clientesGUARDAR");
             this.clientes.guardar.addActionListener(this);
@@ -69,7 +73,14 @@ public class Controlador_Clientes implements ActionListener, MouseListener{
         
         switch (Controlador_Clientes.AccionMVC.valueOf(e.getActionCommand())){
             case clientesGUARDAR:
-                //Llamada al método para guardar una nueva tupla y actualizar la tabla
+                //Aqui va cómo se guarda el cliente
+                /*if(this.mc.crearC(this.clientes.nombre.getText(),
+                        this.clientes.dni.getText())){
+                    //Aqui va que el jlabel que cambia cuando se ha guardado el cliente bien
+                    //También va que se actualice la tabla sola
+                }else{
+                    JOptionPane.showMessageDialog(clientes, "Error, no pudo crearse");
+                }*/
             break;
             case clientesMODIFICAR:
                 //Llamada al método para modificar la tupla y actualizar la tabla

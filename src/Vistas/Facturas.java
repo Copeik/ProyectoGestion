@@ -84,7 +84,7 @@ public class Facturas extends javax.swing.JFrame {
         jLabel2.setText("Cod. Artículo:");
 
         buscar.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        buscar.setText("Modificar");
+        buscar.setText("Buscar");
 
         guardar.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         guardar.setText("Guardar");
