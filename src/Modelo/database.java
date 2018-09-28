@@ -17,7 +17,7 @@ import static sun.security.jgss.GSSUtil.login;
  */
 public class database {
       /* DATOS PARA LA CONEXION */
-  private String bd2 = "db_di";
+  private String bd = "db_di";
   private String login = "root";
   private String password = "root";
   private String url = "jdbc:mysql://localhost/"+bd;
