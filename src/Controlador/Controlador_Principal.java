@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Vistas.Clientes;
 import Vistas.Principal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -64,7 +65,7 @@ public class Controlador_Principal implements ActionListener, MouseListener{
         switch (AccionMVC.valueOf(e.getActionCommand())){
             case principalADMCLIENTES:
                 this.principal.dispose();
-                //ew Controlador_Principal(new opciones()).opciones();
+                new Controlador_Clientes(new Clientes()).clientes();
                 break;
     }
     
