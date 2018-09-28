@@ -75,21 +75,30 @@ public class Controlador_Clientes implements ActionListener, MouseListener{
             case clientesGUARDAR:
                 //Aqui va cómo se guarda el cliente
                 /*if(this.mc.crearC(this.clientes.nombre.getText(),
-                        this.clientes.dni.getText())){
-                    //Aqui va que el jlabel que cambia cuando se ha guardado el cliente bien
-                    //También va que se actualice la tabla sola
+                        this.clientes.dni.getText())){                    
+                    this.clientes.ok.setText("Creado");
+                    //Aqui va que se actualice la tabla sola
                 }else{
-                    JOptionPane.showMessageDialog(clientes, "Error, no pudo crearse");
+                    this.clientes.ok.setText("No creado");
                 }*/
             break;
             case clientesMODIFICAR:
                 //Llamada al método para modificar la tupla y actualizar la tabla
             break;
             case clientesELIMINAR:
-                //Llamada al método para borrar de la lista y actualizarla
+                /*if (this.mc.eliminarC(this.clientes.dni.getText()))
+                {
+                    this.clientes.ok.setText("Eliminado");
+                    //Aqui va que se actualice la tabla sola
+                }
+                else
+                {
+                    this.clientes.ok.setText("No eliminado");
+                }*/
             break;
             case clientesBUSCAR:
-                //Llamada al método para buscar en la tabla
+                //Buscamos el DNI del usuario y si está 
+                //this.mc.buscarC(this.clientes.dni.getText());
             break;
     }
     
