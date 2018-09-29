@@ -13,12 +13,12 @@ import java.sql.SQLException;
  *
  * @author elabu
  */
-public class Modelo_Clientes extends database {
-     public boolean ClientExists (String dni)
+public class Modelo_Facturas extends database {
+     public boolean FacExists (int codigofac)
     {
         boolean res = false;
-        int idc=0;
-        String q = "SELECT * FROM cliente  WHERE dni='" + dni+"' ";
+        
+        String q = "SELECT * FROM facturas WHERE codigofac =" + codigofac;
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
             ResultSet cr = pstm.executeQuery();
@@ -34,11 +34,11 @@ public class Modelo_Clientes extends database {
          }
          return res;
 }
-     public boolean ClientInsert (String dni, String nombre)
+     public boolean FacInsert (int codigofac, String nombrecli,double total)
     {
         boolean res = false;
-        int idc=0;
-        String q = "INSERT INTO cliente VALUES ('"+dni+"','"+nombre+"')";
+        
+        String q = "INSERT INTO facturas VALUES ("+codigofac+",'"+nombrecli+"',"+total+")";
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
             pstm.execute();
@@ -52,11 +52,12 @@ public class Modelo_Clientes extends database {
          }
          return res;
 }
-          public boolean ClientDelete (String dni)
+     
+          public boolean FacDelete (int codigofac)
     {
         boolean res = false;
         int idc=0;
-        String q = "DELETE FROM cliente WHERE dni='"+dni+"'";
+        String q = "DELETE FROM facturas WHERE codigofac="+codigofac;
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
             pstm.execute();
@@ -65,18 +66,16 @@ public class Modelo_Clientes extends database {
             pstm.close();
          }catch(SQLException e){
             System.err.println( e.getMessage() );
-       
-        
          }
          return res;
 }
-          public boolean ClientUpdate (String dni, String nombre)
+          public boolean FacUpdate (int codigofac, String nombrecli,double total)
     {
         boolean res = false;
         int idc=0;
-        String q = "UPDATE cliente \n" +
-        "SET dni='"+dni+"', column2='"+nombre+"' \n" +
-        "WHERE dni='"+dni+"'";
+        String q = "UPDATE facturas \n" +
+        "SET codigofac="+codigofac+", nombreart='"+nombrecli+"', precioini="+total+" \n" +
+        "WHERE codigofac="+codigofac ;
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
             pstm.execute();
