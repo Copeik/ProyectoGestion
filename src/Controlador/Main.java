@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Controlador;
+import Modelo.Modelo_Clientes;
 import Vistas.Principal;
 
 /**
@@ -15,6 +16,9 @@ public class Main {
     public static void main(String[] args) {
         //ejecuta el controlador y este la vista
         new Controlador_Principal( new Principal() ).principal() ;
+        Modelo_Clientes b =new Modelo_Clientes();
+        System.out.println(b.ClientExists("abcdefg2"));
+        
     }
     
 }
