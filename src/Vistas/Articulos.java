@@ -41,7 +41,8 @@ public class Articulos extends javax.swing.JFrame {
         modificar = new javax.swing.JButton();
         eliminar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        nombreart = new javax.swing.JTextField();
+        nombre = new javax.swing.JTextField();
+        ok = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,6 +96,8 @@ public class Articulos extends javax.swing.JFrame {
 
         jLabel4.setText("Nombre:");
 
+        ok.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -105,10 +108,12 @@ public class Articulos extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(79, 79, 79)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(guardar)
-                                    .addComponent(modificar))
+                                .addGap(73, 73, 73)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(modificar)
+                                    .addComponent(guardar))
+                                .addGap(24, 24, 24)
+                                .addComponent(ok, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(buscar)
@@ -129,7 +134,7 @@ public class Articulos extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel4)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(nombreart, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(99, 99, 99)
                         .addComponent(jLabel1)))
@@ -151,11 +156,16 @@ public class Articulos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(nombreart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(eliminar)
-                    .addComponent(guardar))
+                    .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(eliminar)
+                            .addComponent(guardar)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(ok, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(modificar)
@@ -226,7 +236,8 @@ public class Articulos extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable listaarticulos;
     public javax.swing.JButton modificar;
-    public javax.swing.JTextField nombreart;
+    public javax.swing.JTextField nombre;
+    public javax.swing.JLabel ok;
     public javax.swing.JTextField precio;
     // End of variables declaration//GEN-END:variables
 }

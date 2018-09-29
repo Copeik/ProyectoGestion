@@ -19,6 +19,9 @@ import java.awt.event.MouseListener;
 public class Controlador_Articulos implements ActionListener, MouseListener{
     
         Articulos articulos;
+        
+        //Creación del objeto para usar los métodos de clientes
+        //Modelo_Articulos ma = new Metodos_Articulos();
 
     Controlador_Articulos(Articulos articulos) {
         this.articulos = articulos;
@@ -39,8 +42,8 @@ public class Controlador_Articulos implements ActionListener, MouseListener{
             articulos.setLocationRelativeTo(null);
             articulos.setResizable(false);
             
-            //Aqui va la llamada al método para que nos impirma la tabla
-            //this.clientes.listaclientes.setModel(this.mg.mostrarDC(Metodos_empleado.getIdlogueado()));
+            //Aqui técnicamente te imprimiría la tabla de clientes
+            //this.articulos.listaarticulos.setModel(this.ma.mostrarA());
             
             this.articulos.guardar.setActionCommand("articulosGUARDAR");
             this.articulos.guardar.addActionListener(this);
@@ -69,16 +72,55 @@ public class Controlador_Articulos implements ActionListener, MouseListener{
         
         switch (Controlador_Articulos.AccionMVC.valueOf(e.getActionCommand())){
             case articulosGUARDAR:
-                //Llamada al método para guardar una nueva tupla y actualizar la tabla
+                //Aqui va cómo se guarda el articulo
+                /*if(this.ma.crearA(Integer.parseInt(this.articulos.codarticulo.getText()),
+                        Float.parseFloat(this.articulos.precio.getText()), this.articulos.nombre.getText())){                    
+                    this.articulos.ok.setText("Creado");
+                    //Aqui va que se actualice la tabla sola
+                }else{
+                    this.articulos.ok.setText("No creado");
+                }*/
             break;
             case articulosMODIFICAR:
-                //Llamada al método para modificar la tupla y actualizar la tabla
+                /*if (this.ma.ArtExist(Integer.parseInt(this.articulos.codarticulo.getText())))
+                 {
+                     if (this.ma.ArtUpdate(Integer.parseInt(this.articulos.codarticulo.getText())))
+                     {
+                     this.articulos.ok.setText("Modificado");
+                     //Aqui va que se actualice la tabla sola
+                     }
+                     else
+                     {
+                         this.articulos.ok.setText("No modificado");
+                     }
+                 }
+                 else
+                 {
+                     this.articulos.ok.setText("No modificado");
+                 }*/
             break;
             case articulosELIMINAR:
-                //Llamada al método para borrar de la lista y actualizarla
+                /*if (this.ma.ArtDelete(Integer.parseInt(this.articulos.codarticulo.getText())))
+                {
+                    this.articulos.ok.setText("Eliminado");
+                    //Aqui va que se actualice la tabla sola
+                }
+                else
+                {
+                    this.articulos.ok.setText("No eliminado");
+                }*/
             break;
             case articulosBUSCAR:
-                //Llamada al método para buscar en la tabla
+                //Buscamos el código del usuario y si está 
+                /*if (this.ma.ArtExist(Integer.parseInt(this.articulos.codarticulo.getText())))
+                {
+                    this.articulos.ok.setText("Encontrado");
+                    //Aqui va que se actualice la tabla sola
+                }
+                else
+                {
+                    this.articulos.ok.setText("No encontrado");
+                }*/
             break;
     }
     

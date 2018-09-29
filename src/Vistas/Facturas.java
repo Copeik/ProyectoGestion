@@ -37,13 +37,14 @@ public class Facturas extends javax.swing.JFrame {
         codfactura = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         buscar = new javax.swing.JButton();
-        guardar = new javax.swing.JButton();
+        crear = new javax.swing.JButton();
         modificar = new javax.swing.JButton();
         eliminar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         dni = new javax.swing.JTextField();
         codarticulo = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        ok = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,8 +87,8 @@ public class Facturas extends javax.swing.JFrame {
         buscar.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         buscar.setText("Buscar");
 
-        guardar.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        guardar.setText("Guardar");
+        crear.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        crear.setText("Guardar");
 
         modificar.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         modificar.setText("Modificar");
@@ -99,6 +100,8 @@ public class Facturas extends javax.swing.JFrame {
 
         jLabel5.setText("Cod. Factura:");
 
+        ok.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -109,39 +112,43 @@ public class Facturas extends javax.swing.JFrame {
                         .addGap(99, 99, 99)
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(modificar)
-                            .addComponent(guardar))
-                        .addGap(130, 130, 130)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(eliminar)
-                            .addComponent(buscar)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(ok, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addGap(13, 13, 13))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(codarticulo)
-                                    .addComponent(codfactura, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel2)
+                                                .addGap(13, 13, 13))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel5)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(codarticulo)
+                                            .addComponent(codfactura, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel3)
+                                            .addComponent(jLabel4))))
                                 .addGap(14, 14, 14)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(precio)
-                                    .addComponent(dni, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(dni, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(26, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(modificar)
+                    .addComponent(crear))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(eliminar, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(buscar, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(74, 74, 74))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,7 +163,7 @@ public class Facturas extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(precio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(dni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -165,8 +172,10 @@ public class Facturas extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(eliminar)
-                    .addComponent(guardar))
-                .addGap(34, 34, 34)
+                    .addComponent(crear))
+                .addGap(28, 28, 28)
+                .addComponent(ok, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(modificar)
                     .addComponent(buscar))
@@ -227,9 +236,9 @@ public class Facturas extends javax.swing.JFrame {
     public javax.swing.JButton buscar;
     public javax.swing.JTextField codarticulo;
     public javax.swing.JTextField codfactura;
+    public javax.swing.JButton crear;
     public javax.swing.JTextField dni;
     public javax.swing.JButton eliminar;
-    public javax.swing.JButton guardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -240,6 +249,7 @@ public class Facturas extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable listafacturas;
     public javax.swing.JButton modificar;
+    public javax.swing.JLabel ok;
     public javax.swing.JTextField precio;
     // End of variables declaration//GEN-END:variables
 }

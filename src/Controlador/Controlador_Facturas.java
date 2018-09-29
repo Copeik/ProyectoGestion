@@ -20,6 +20,9 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
     
         Facturas facturas;
 
+        //Creación del objeto para usar los métodos de clientes
+        //Modelo_Facturas mf = new Metodos_Facturas();
+        
     Controlador_Facturas(Facturas facturas) {
         this.facturas = facturas;
     }
@@ -27,7 +30,7 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
         public enum AccionMVC{
         
         //Acciones Vista opciones
-        facturasGUARDAR,
+        facturasCREAR,
         facturasMODIFICAR,
         facturasELIMINAR,
         facturasBUSCAR,
@@ -39,11 +42,11 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
             facturas.setLocationRelativeTo(null);
             facturas.setResizable(false);
             
-            //Aqui va la llamada al método para que nos impirma la tabla
-            //this.clientes.listaclientes.setModel(this.mg.mostrarDC(Metodos_empleado.getIdlogueado()));
+            //Aqui técnicamente te imprimiría la tabla de clientes
+            //this.facturas.listafacturas.setModel(this.mf.mostrarF());
             
-            this.facturas.guardar.setActionCommand("facturasGUARDAR");
-            this.facturas.guardar.addActionListener(this);
+            this.facturas.crear.setActionCommand("facturasCREAR");
+            this.facturas.crear.addActionListener(this);
             
             this.facturas.modificar.setActionCommand("facturasMODIFICAR");
             this.facturas.modificar.addActionListener(this);
@@ -68,17 +71,50 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
     public void actionPerformed(ActionEvent e) {
         
         switch (Controlador_Facturas.AccionMVC.valueOf(e.getActionCommand())){
-            case facturasGUARDAR:
-                //Llamada al método para guardar una nueva tupla y actualizar la tabla
+            case facturasCREAR:
+                /*this.facturas.dispose();
+                new Controlador_Factura(new Facturas()).facturas();*/
             break;
             case facturasMODIFICAR:
-                //Llamada al método para modificar la tupla y actualizar la tabla
+                /*if (this.mf.FacExist(Integer.parseInt(this.facturas.codfactura.getText())))
+                 {
+                     if (this.mf.FacExist(Integer.parseInt(this.facturas.codfactura.getText())))
+                     {
+                     this.facturas.ok.setText("Modificado");
+                     //Aqui va que se actualice la tabla sola
+                     }
+                     else
+                     {
+                         this.facturas.ok.setText("No modificado");
+                     }
+                 }
+                 else
+                 {
+                     this.facturas.ok.setText("No modificado");
+                 }*/
             break;
             case facturasELIMINAR:
-                //Llamada al método para borrar de la lista y actualizarla
+                /*if (this.mf.FacExist(Integer.parseInt(this.facturas.codfactura.getText())))
+                {
+                    this.facturas.ok.setText("Eliminado");
+                    //Aqui va que se actualice la tabla sola
+                }
+                else
+                {
+                    this.facturas.ok.setText("No eliminado");
+                }*/
             break;
             case facturasBUSCAR:
-                //Llamada al método para buscar en la tabla
+                //Buscamos el código del usuario y si está 
+                /*if (this.mf.FacExist(Integer.parseInt(this.facturas.codfactura.getText())))
+                {
+                    this.facturas.ok.setText("Encontrado");
+                    //Aqui va que se actualice la tabla sola
+                }
+                else
+                {
+                    this.facturas.ok.setText("No encontrado");
+                }*/
             break;
     }
     

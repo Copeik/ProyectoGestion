@@ -22,7 +22,7 @@ public class Controlador_Clientes implements ActionListener, MouseListener{
         Clientes clientes;
         
         //Creación del objeto para usar los métodos de clientes
-        //Metodos_Clientes mc = new Metodos_Clientes();
+        //Modelo_Clientes mc = new Metodos_Clientes();
 
     Controlador_Clientes(Clientes clientes) {
         this.clientes = clientes;
@@ -83,7 +83,22 @@ public class Controlador_Clientes implements ActionListener, MouseListener{
                 }*/
             break;
             case clientesMODIFICAR:
-                //Llamada al método para modificar la tupla y actualizar la tabla
+                /*if (this.mc.ClientExist(this.clientes.dni.getText()))
+                {
+                    if (this.mc.ClientUpdate(this.clientes.dni.getText()))
+                    {
+                    this.clientes.ok.setText("Modificado");
+                    //Aqui va que se actualice la tabla sola
+                    }
+                    else
+                    {
+                        this.clientes.ok.setText("No modificado");
+                    }
+                }
+                else
+                {
+                    this.clientes.ok.setText("No modificado");
+                }*/
             break;
             case clientesELIMINAR:
                 /*if (this.mc.eliminarC(this.clientes.dni.getText()))
@@ -98,7 +113,15 @@ public class Controlador_Clientes implements ActionListener, MouseListener{
             break;
             case clientesBUSCAR:
                 //Buscamos el DNI del usuario y si está 
-                //this.mc.buscarC(this.clientes.dni.getText());
+                /*if (this.mc.ClientExist(this.clientes.dni.getText()))
+                {
+                    this.clientes.ok.setText("Encontrado");
+                    //Aqui va que se actualice la tabla sola
+                }
+                else
+                {
+                    this.clientes.ok.setText("No encontrado");
+                }*/
             break;
     }
     
