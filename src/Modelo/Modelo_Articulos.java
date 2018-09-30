@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Modelo_Articulos extends database {
     
-    public DefaultTableModel getTablaProducto()
+    public DefaultTableModel getTabla()
     {
       DefaultTableModel tablemodel = new DefaultTableModel();
       int registros = 0;

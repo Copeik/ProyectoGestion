@@ -5,7 +5,10 @@
  */
 package Controlador;
 
+import Vistas.Articulos;
 import Vistas.Clientes;
+import Vistas.Factura;
+import Vistas.Facturas;
 import Vistas.Principal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -67,6 +70,15 @@ public class Controlador_Principal implements ActionListener, MouseListener{
                 this.principal.dispose();
                 new Controlador_Clientes(new Clientes()).clientes();
                 break;
+            case principalADMARTICULOS:
+                this.principal.dispose();
+                new Controlador_Articulos(new Articulos()).articulos();
+                break;
+            case principalADMFACTURAS:
+                this.principal.dispose();
+             //   new Controlador_Facturas(new Factura()).factura();
+                break;
+            
     }
     
 }

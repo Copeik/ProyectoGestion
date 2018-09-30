@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Modelo.Modelo_Clientes;
 import Vistas.Clientes;
 import Vistas.Principal;
 import java.awt.event.ActionEvent;
@@ -18,6 +19,7 @@ import javax.swing.JOptionPane;
  * @author qiqer
  */
 public class Controlador_Clientes implements ActionListener, MouseListener{
+    Modelo_Clientes a= new Modelo_Clientes();
     
         Clientes clientes;
         
@@ -57,6 +59,8 @@ public class Controlador_Clientes implements ActionListener, MouseListener{
             
             this.clientes.buscar.setActionCommand("clientesBUSCAR");
             this.clientes.buscar.addActionListener(this);
+            
+            this.clientes.listaclientes.setModel(a.getTabla());
         }
         
     public void mouseClicked(MouseEvent e) {}

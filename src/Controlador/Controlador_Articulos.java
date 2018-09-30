@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Modelo.Modelo_Articulos;
 import Vistas.Articulos;
 import Vistas.Principal;
 import java.awt.event.ActionEvent;
@@ -17,7 +18,7 @@ import java.awt.event.MouseListener;
  * @author qiqer
  */
 public class Controlador_Articulos implements ActionListener, MouseListener{
-    
+        Modelo_Articulos a= new Modelo_Articulos();
         Articulos articulos;
         
         //Creación del objeto para usar los métodos de clientes
@@ -56,6 +57,8 @@ public class Controlador_Articulos implements ActionListener, MouseListener{
             
             this.articulos.buscar.setActionCommand("articulosBUSCAR");
             this.articulos.buscar.addActionListener(this);
+            
+            this.articulos.listaarticulos.setModel(a.getTabla());
         }
         
     public void mouseClicked(MouseEvent e) {}

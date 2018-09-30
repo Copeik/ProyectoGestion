@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
  * @author elabu
  */
 public class Modelo_Clientes extends database {
-        public DefaultTableModel getTablaProducto()
+        public DefaultTableModel getTabla()
     {
       DefaultTableModel tablemodel = new DefaultTableModel();
       int registros = 0;
@@ -23,7 +23,7 @@ public class Modelo_Clientes extends database {
       //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
       //para formar la matriz de datos
       try{
-         PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT count(*) as total FROM Articulos");
+         PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT count(*) as total FROM Cliente");
          ResultSet res = pstm.executeQuery();
          res.next();
          registros = res.getInt("total");
@@ -35,7 +35,7 @@ public class Modelo_Clientes extends database {
     Object[][] data = new String[registros][5];
       try{
           //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT * FROM Articulos");
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT * FROM Cliente");
          ResultSet res = pstm.executeQuery();
          int i=0;
          while(res.next()){
