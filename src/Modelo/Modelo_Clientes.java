@@ -97,7 +97,6 @@ public class Modelo_Clientes extends database {
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
             pstm.execute();
-            System.out.println("Insertado con exito");
             res=true; 
             pstm.close();
          }catch(SQLException e){

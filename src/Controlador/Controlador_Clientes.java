@@ -77,43 +77,34 @@ public class Controlador_Clientes implements ActionListener, MouseListener{
         
         switch (Controlador_Clientes.AccionMVC.valueOf(e.getActionCommand())){
             case clientesGUARDAR:
-                //Aqui va cómo se guarda el cliente
-                /*if(this.mc.crearC(this.clientes.nombre.getText(),
-                        this.clientes.dni.getText())){                    
-                    this.clientes.ok.setText("Creado");
-                    //Aqui va que se actualice la tabla sola
-                }else{
-                    this.clientes.ok.setText("No creado");
-                }*/
+                if (this.clientes.dni.getText()!=null)
+                {
+                    a.ClientInsert(this.clientes.dni.getText(), this.clientes.nombre.getText());
+                    this.clientes.ok.setText("Guardado");
+                    this.clientes.listaclientes.setModel(a.getTabla());
+                }
             break;
             case clientesMODIFICAR:
-                /*if (this.mc.ClientExist(this.clientes.dni.getText()))
+                if (this.clientes.dni.getText()!=null)
                 {
-                    if (this.mc.ClientUpdate(this.clientes.dni.getText()))
-                    {
-                    this.clientes.ok.setText("Modificado");
-                    //Aqui va que se actualice la tabla sola
-                    }
-                    else
-                    {
-                        this.clientes.ok.setText("No modificado");
-                    }
+                    a.ClientUpdate(this.clientes.dni.getText(), this.clientes.nombre.getText());
+                    this.clientes.ok.setText("Actualizado");
+                    this.clientes.listaclientes.setModel(a.getTabla());
                 }
-                else
-                {
-                    this.clientes.ok.setText("No modificado");
-                }*/
             break;
             case clientesELIMINAR:
-                /*if (this.mc.eliminarC(this.clientes.dni.getText()))
+                if (this.clientes.dni.getText()!=null)
                 {
-                    this.clientes.ok.setText("Eliminado");
-                    //Aqui va que se actualice la tabla sola
+                    a.ClientDelete(this.clientes.dni.getText());
+                    if (a.ClientExists(this.clientes.dni.getText())) {
+                        this.clientes.ok.setText("Eliminado");
+                    }else{
+                        this.clientes.ok.setText("No eliminado");
+                    }
+
+                    
+                    this.clientes.listaclientes.setModel(a.getTabla());
                 }
-                else
-                {
-                    this.clientes.ok.setText("No eliminado");
-                }*/
             break;
             case clientesBUSCAR:
                 //Buscamos el DNI del usuario y si está 
