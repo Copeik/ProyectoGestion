@@ -96,13 +96,7 @@ public class Controlador_Clientes implements ActionListener, MouseListener{
                 if (this.clientes.dni.getText()!=null)
                 {
                     a.ClientDelete(this.clientes.dni.getText());
-                    if (a.ClientExists(this.clientes.dni.getText())) {
                         this.clientes.ok.setText("Eliminado");
-                    }else{
-                        this.clientes.ok.setText("No eliminado");
-                    }
-
-                    
                     this.clientes.listaclientes.setModel(a.getTabla());
                 }
             break;

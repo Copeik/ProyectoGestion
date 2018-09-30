@@ -75,43 +75,28 @@ public class Controlador_Articulos implements ActionListener, MouseListener{
         
         switch (Controlador_Articulos.AccionMVC.valueOf(e.getActionCommand())){
             case articulosGUARDAR:
-                //Aqui va cómo se guarda el articulo
-                /*if(this.ma.crearA(Integer.parseInt(this.articulos.codarticulo.getText()),
-                        Float.parseFloat(this.articulos.precio.getText()), this.articulos.nombre.getText())){                    
-                    this.articulos.ok.setText("Creado");
-                    //Aqui va que se actualice la tabla sola
-                }else{
-                    this.articulos.ok.setText("No creado");
-                }*/
+                if (this.articulos.codarticulo.getText()!=null)
+                {
+                    a.ArtInsert(Integer.parseInt(this.articulos.codarticulo.getText()), this.articulos.nombre.getText(),Double.parseDouble(this.articulos.precio.getText()));
+                    this.articulos.ok.setText("Guardado");
+                    this.articulos.listaarticulos.setModel(a.getTabla());
+                }
             break;
             case articulosMODIFICAR:
-                /*if (this.ma.ArtExist(Integer.parseInt(this.articulos.codarticulo.getText())))
-                 {
-                     if (this.ma.ArtUpdate(Integer.parseInt(this.articulos.codarticulo.getText())))
-                     {
-                     this.articulos.ok.setText("Modificado");
-                     //Aqui va que se actualice la tabla sola
-                     }
-                     else
-                     {
-                         this.articulos.ok.setText("No modificado");
-                     }
-                 }
-                 else
-                 {
-                     this.articulos.ok.setText("No modificado");
-                 }*/
+                if (this.articulos.codarticulo.getText()!=null)
+                {
+                    a.ArtUpdate(Integer.parseInt(this.articulos.codarticulo.getText()), this.articulos.nombre.getText(),Double.parseDouble(this.articulos.precio.getText()));
+                    this.articulos.ok.setText("Actualizado");
+                    this.articulos.listaarticulos.setModel(a.getTabla());
+                }
             break;
             case articulosELIMINAR:
-                /*if (this.ma.ArtDelete(Integer.parseInt(this.articulos.codarticulo.getText())))
+                if (this.articulos.codarticulo.getText()!=null)
                 {
+                    a.ArtDelete(Integer.parseInt(this.articulos.codarticulo.getText()));
                     this.articulos.ok.setText("Eliminado");
-                    //Aqui va que se actualice la tabla sola
+                    this.articulos.listaarticulos.setModel(a.getTabla());
                 }
-                else
-                {
-                    this.articulos.ok.setText("No eliminado");
-                }*/
             break;
             case articulosBUSCAR:
                 //Buscamos el código del usuario y si está 
