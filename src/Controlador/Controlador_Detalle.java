@@ -6,18 +6,27 @@
 package Controlador;
 
 import Vistas.Facturas;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 
 /**
  *
  * @author qiqer
  */
-public class Controlador_Factura {
+public class Controlador_Detalle {
 
-    public Controlador_Factura(Facturas facturas) {
+    public Controlador_Detalle(Facturas facturas) {
     }
+    
+    /*Factura detalle;
+    
+     Controlador_Detalles(Factura detalle) implements ActionListener, MouseListener{
+        this.detalle = detalle;
+    }*/
 
-    void facturas() {
+    void detalle() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
     
 }
