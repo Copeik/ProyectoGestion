@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Modelo.Modelo_Facturas;
 import Vistas.Facturas;
 import Vistas.Principal;
 import java.awt.event.ActionEvent;
@@ -18,10 +19,8 @@ import java.awt.event.MouseListener;
  */
 public class Controlador_Facturas implements ActionListener, MouseListener{
     
+        Modelo_Facturas f= new Modelo_Facturas();
         Facturas facturas;
-
-        //Creación del objeto para usar los métodos de clientes
-        //Modelo_Facturas mf = new Metodos_Facturas();
         
     Controlador_Facturas(Facturas facturas) {
         this.facturas = facturas;
@@ -56,9 +55,22 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
             
             this.facturas.buscar.setActionCommand("facturasBUSCAR");
             this.facturas.buscar.addActionListener(this);
+            
+            this.facturas.listafacturas.addMouseListener(this);
+            this.facturas.listafacturas.setModel(f.getTabla());
         }
         
-    public void mouseClicked(MouseEvent e) {}
+    public void mouseClicked(MouseEvent e) {
+        if( e.getButton()== 1)//boton izquierdo
+        {
+             int fila = this.facturas.listafacturas.rowAtPoint(e.getPoint());
+             if (fila > -1){                
+                this.facturas.codfactura.setText( String.valueOf( this.facturas.listafacturas.getValueAt(fila, 0) ));
+                this.facturas.precio.setText( String.valueOf( this.facturas.listafacturas.getValueAt(fila, 1) ));
+                this.facturas.dni.setText( String.valueOf( this.facturas.listafacturas.getValueAt(fila, 1) ));
+             }
+        }
+    }
 
     public void mousePressed(MouseEvent e) {}
 
@@ -76,33 +88,33 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
                 new Controlador_Factura(new Facturas()).facturas();
             break;
             case facturasMODIFICAR:
-                /*if (this.mf.FacExist(Integer.parseInt(this.facturas.codfactura.getText())))
+                if (f.FacExists(Integer.parseInt(this.facturas.codfactura.getText())))
                  {
-                     if (this.mf.FacExist(Integer.parseInt(this.facturas.codfactura.getText())))
+                     if (f.FacExists(Integer.parseInt(this.facturas.codfactura.getText())))
                      {
-                     this.facturas.ok.setText("Modificado");
-                     //Aqui va que se actualice la tabla sola
+                     this.facturas.ok.setText("Modificada");
+                     this.facturas.listafacturas.setModel(f.getTabla());
                      }
                      else
                      {
-                         this.facturas.ok.setText("No modificado");
+                         this.facturas.ok.setText("No modificada");
                      }
                  }
                  else
                  {
                      this.facturas.ok.setText("No modificado");
-                 }*/
+                 }
             break;
             case facturasELIMINAR:
-                /*if (this.mf.FacExist(Integer.parseInt(this.facturas.codfactura.getText())))
+                if (f.FacExists(Integer.parseInt(this.facturas.codfactura.getText())))
                 {
                     this.facturas.ok.setText("Eliminado");
-                    //Aqui va que se actualice la tabla sola
+                    this.facturas.listafacturas.setModel(f.getTabla());
                 }
                 else
                 {
                     this.facturas.ok.setText("No eliminado");
-                }*/
+                }
             break;
             case facturasBUSCAR:
                 //Buscamos el código del usuario y si está 

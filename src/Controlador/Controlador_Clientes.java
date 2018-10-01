@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
  * @author qiqer
  */
 public class Controlador_Clientes implements ActionListener, MouseListener{
-    Modelo_Clientes a= new Modelo_Clientes();
+            Modelo_Clientes a= new Modelo_Clientes();
     
         Clientes clientes;
         
