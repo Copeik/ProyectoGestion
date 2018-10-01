@@ -9,12 +9,12 @@ package Modelo.pojos;
  *
  * @author elabu
  */
-public class Articulos {
+public class Articulo {
     private int codart;
     private String nombreart;
     private double precioini;
 
-    public Articulos(int codart, String nombreart, double precioini) {
+    public Articulo(int codart, String nombreart, double precioini) {
         this.codart = codart;
         this.nombreart = nombreart;
         this.precioini = precioini;

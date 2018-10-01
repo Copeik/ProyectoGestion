@@ -6,6 +6,7 @@
 package Controlador;
 
 import Modelo.Modelo_Articulos;
+import Modelo.pojos.Articulo;
 import Modelo.pojos.Cliente;
 import Vistas.Articulos;
 import Vistas.Principal;
@@ -117,16 +118,16 @@ public class Controlador_Articulos implements ActionListener, MouseListener{
                 }
             break;
             case articulosBUSCAR:
-                /*if (this.articulos.Articulobuscar.getText().equals("")) {
+                if (this.articulos.articulobuscar.getText().equals("")) {
                     this.articulos.codarticulo.setText("");
                     this.articulos.nombre.setText("");
                     this.articulos.precio.setText("");
                 }else{
-                   Cliente client= a.ClientSearch(this.clientes.DNIBusqueda.getText());
-                    this.articulos.codarticulo.setText("");
-                    this.articulos.nombre.setText("");
-                    this.articulos.precio.setText("");
-                }*/
+                   Articulo art= a.ArtSearch(Integer.parseInt(this.articulos.articulobuscar.getText()));
+                    this.articulos.codarticulo.setText(""+art.getCodart());
+                    this.articulos.nombre.setText(art.getNombreart());
+                    this.articulos.precio.setText(""+art.getPrecioini());
+                }
             break;
     }
     

@@ -5,6 +5,9 @@
  */
 package Modelo;
 
+import Modelo.pojos.Articulo;
+import Modelo.pojos.Cliente;
+import Vistas.Articulos;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -133,7 +136,34 @@ public class Modelo_Articulos extends database {
          }
          return res;
 }
-
+          public Articulo ArtSearch (int codarticulo)
+    {
+        Articulo art = null;
+        count=0;
+        boolean res = false;
+        int idc=0;
+        String q = "SELECT * FROM articulos  WHERE codarticulo=" + codarticulo;
+        try {
+            PreparedStatement pstm = this.getConnection().prepareStatement(q);
+            ResultSet cr = pstm.executeQuery();
+            while(cr.next())
+            {  
+                art= new Articulo(Integer.parseInt(cr.getString("codarticulo")),cr.getString("nombreart"),Double.parseDouble(cr.getString("precioini")));
+                count++;
+            }
+            if (count>=1) {
+                res=true;
+            }
+            
+            pstm.close();
+         }catch(SQLException e){
+            System.err.println( e.getMessage() );
+       
+        
+         }
+        
+         return art;
+}
 
 
 
