@@ -33,7 +33,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         admclientes.setText("Administrar Clientes");
         admclientes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -42,22 +42,16 @@ public class Principal extends javax.swing.JFrame {
                 admclientesActionPerformed(evt);
             }
         });
-        getContentPane().add(admclientes);
-        admclientes.setBounds(70, 270, 120, 40);
+        getContentPane().add(admclientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 120, 40));
 
         admarticulos.setText("Administrar Articulos");
         admarticulos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(admarticulos);
-        admarticulos.setBounds(290, 270, 105, 37);
+        getContentPane().add(admarticulos, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, -1, 37));
 
         admfacturas.setText("Administrar Facturas");
         admfacturas.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(admfacturas);
-        admfacturas.setBounds(510, 270, 105, 37);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\elabu\\OneDrive\\Escritorio\\bank_america (1).jpg")); // NOI18N
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 720, 320);
+        getContentPane().add(admfacturas, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, -1, 37));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 320));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

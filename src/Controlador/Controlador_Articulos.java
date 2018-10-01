@@ -33,6 +33,7 @@ public class Controlador_Articulos implements ActionListener, MouseListener{
         public enum AccionMVC{
         
         //Acciones Vista opciones
+        articulosATRAS,
         articulosGUARDAR,
         articulosMODIFICAR,
         articulosELIMINAR,
@@ -47,6 +48,9 @@ public class Controlador_Articulos implements ActionListener, MouseListener{
             
             //Aqui técnicamente te imprimiría la tabla de clientes
             //this.articulos.listaarticulos.setModel(this.ma.mostrarA());
+            
+            this.articulos.guardar.setActionCommand("articulosATRAS");
+            this.articulos.guardar.addActionListener(this);
             
             this.articulos.guardar.setActionCommand("articulosGUARDAR");
             this.articulos.guardar.addActionListener(this);
@@ -86,6 +90,10 @@ public class Controlador_Articulos implements ActionListener, MouseListener{
     public void actionPerformed(ActionEvent e) {
         
         switch (Controlador_Articulos.AccionMVC.valueOf(e.getActionCommand())){
+            case articulosATRAS:                
+                this.articulos.dispose();
+                new Controlador_Principal(new Principal()).principal();
+            break;
             case articulosGUARDAR:
                 if (this.articulos.codarticulo.getText().equals("")||this.articulos.nombre.getText().equals("")||this.articulos.codarticulo.getText().equals(""))
                 {
