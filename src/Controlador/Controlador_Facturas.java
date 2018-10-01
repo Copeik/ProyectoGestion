@@ -72,8 +72,8 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
         
         switch (Controlador_Facturas.AccionMVC.valueOf(e.getActionCommand())){
             case facturasCREAR:
-                /*this.facturas.dispose();
-                new Controlador_Factura(new Facturas()).facturas();*/
+                this.facturas.dispose();
+                new Controlador_Factura(new Facturas()).facturas();
             break;
             case facturasMODIFICAR:
                 /*if (this.mf.FacExist(Integer.parseInt(this.facturas.codfactura.getText())))

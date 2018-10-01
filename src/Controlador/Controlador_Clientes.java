@@ -98,9 +98,7 @@ public class Controlador_Clientes implements ActionListener, MouseListener{
                     }else{
                         this.clientes.ok.setText("Ya existe");
                     }
-                        
-
-                }
+                }         
             break;
             case clientesMODIFICAR:
                 if (a.ClientExists(this.clientes.dni.getText())==false)
