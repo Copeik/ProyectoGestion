@@ -90,13 +90,13 @@ public class Modelo_Detalles extends database {
          }
          return res;
 }
-          public boolean FacUpdate (int codarticulo, String codigofac2,double preciofinal)
+          public boolean DetUpdate (int codarticulo, String codigofac2,double preciofinal)
     {
         boolean res = false;
         int idc=0;
         String q = "UPDATE facturas \n" +
         "SET codarticulo="+codarticulo+", codigofac2='"+codigofac2+"', preciofinal="+preciofinal+" \n" +
-        "WHERE codigofac='"+codigofac2+"' AND codarticulo="+codarticulo ;
+        "WHERE codigofac2='"+codigofac2+"' AND codarticulo="+codarticulo ;
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
             pstm.execute();
@@ -109,37 +109,7 @@ public class Modelo_Detalles extends database {
         
          }
          return res;
-}
-          public Factura FacSearch (String codfac)
-    {
-        Factura fac = null;
-        boolean res = false;
-        int idc=0;
-        String q = "SELECT * FROM facturas  WHERE codfac='" + codfac+"' ";
-        try {
-            PreparedStatement pstm = this.getConnection().prepareStatement(q);
-            ResultSet cr = pstm.executeQuery();
-            while(cr.next())
-            {  
-                fac= new Factura(cr.getString("nombrecli"),cr.getString("codigofac"),Float.parseFloat(cr.getString("total")));
-                count++;
-            }
-            if (count>=1) {
-                res=true;
-            }
-            
-            pstm.close();
-         }catch(SQLException e){
-            System.err.println( e.getMessage() );
-       
-        
-         }
-        
-         return fac;
-}
-
-
-
+    }
 
 }
 
