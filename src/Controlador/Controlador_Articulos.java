@@ -20,11 +20,9 @@ import java.awt.event.MouseListener;
  * @author qiqer
  */
 public class Controlador_Articulos implements ActionListener, MouseListener{
+    
         Modelo_Articulos a= new Modelo_Articulos();
         Articulos articulos;
-        
-        //Creación del objeto para usar los métodos de clientes
-        //Modelo_Articulos ma = new Metodos_Articulos();
 
     Controlador_Articulos(Articulos articulos) {
         this.articulos = articulos;
@@ -45,9 +43,6 @@ public class Controlador_Articulos implements ActionListener, MouseListener{
             articulos.setVisible(true);
             articulos.setLocationRelativeTo(null);
             articulos.setResizable(false);
-            
-            //Aqui técnicamente te imprimiría la tabla de clientes
-            //this.articulos.listaarticulos.setModel(this.ma.mostrarA());
             
             this.articulos.guardar.setActionCommand("articulosATRAS");
             this.articulos.guardar.addActionListener(this);
@@ -92,7 +87,7 @@ public class Controlador_Articulos implements ActionListener, MouseListener{
         switch (Controlador_Articulos.AccionMVC.valueOf(e.getActionCommand())){
             case articulosATRAS:                
                 this.articulos.dispose();
-                new Controlador_Principal(new Principal()).principal();
+                new Controlador_Principal( new Principal() ).principal() ;
             break;
             case articulosGUARDAR:
                 if (this.articulos.codarticulo.getText().equals("")||this.articulos.nombre.getText().equals("")||this.articulos.codarticulo.getText().equals(""))

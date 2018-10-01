@@ -20,12 +20,10 @@ import javax.swing.JOptionPane;
  * @author qiqer
  */
 public class Controlador_Clientes implements ActionListener, MouseListener{
-            Modelo_Clientes a= new Modelo_Clientes();
+    
+        Modelo_Clientes a= new Modelo_Clientes();
     
         Clientes clientes;
-        
-        //Creación del objeto para usar los métodos de clientes
-        //Modelo_Clientes mc = new Metodos_Clientes();
 
     Controlador_Clientes(Clientes clientes) {
         this.clientes = clientes;
@@ -34,6 +32,7 @@ public class Controlador_Clientes implements ActionListener, MouseListener{
         public enum AccionMVC{
         
         //Acciones Vista opciones
+        clientesATRAS,
         clientesGUARDAR,
         clientesMODIFICAR,
         clientesELIMINAR,
@@ -46,8 +45,8 @@ public class Controlador_Clientes implements ActionListener, MouseListener{
             clientes.setLocationRelativeTo(null);
             clientes.setResizable(false);
             
-            //Aqui técnicamente te imprimiría la tabla de clientes
-            //this.clientes.listaclientes.setModel(this.mc.mostrarC());
+            this.clientes.atras.setActionCommand("clientesATRAS");
+            this.clientes.atras.addActionListener(this);
             
             this.clientes.guardar.setActionCommand("clientesGUARDAR");
             this.clientes.guardar.addActionListener(this);
@@ -87,6 +86,10 @@ public class Controlador_Clientes implements ActionListener, MouseListener{
     public void actionPerformed(ActionEvent e) {
         
         switch (Controlador_Clientes.AccionMVC.valueOf(e.getActionCommand())){
+            case clientesATRAS:                
+                this.clientes.dispose();
+                new Controlador_Principal( new Principal() ).principal() ;
+            break;
             case clientesGUARDAR:
                 if (this.clientes.dni.getText().equals("")||this.clientes.nombre.getText().equals(""))
                 {

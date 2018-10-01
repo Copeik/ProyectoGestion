@@ -30,6 +30,7 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
         public enum AccionMVC{
         
         //Acciones Vista opciones
+        facturasATRAS,
         facturasCREAR,
         facturasMODIFICAR,
         facturasELIMINAR,
@@ -41,6 +42,9 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
             facturas.setVisible(true);
             facturas.setLocationRelativeTo(null);
             facturas.setResizable(false);
+            
+            this.facturas.atras.setActionCommand("facturasATRAS");
+            this.facturas.atras.addActionListener(this);
             
             this.facturas.crear.setActionCommand("facturasCREAR");
             this.facturas.crear.addActionListener(this);
@@ -81,6 +85,10 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
     public void actionPerformed(ActionEvent e) {
         
         switch (Controlador_Facturas.AccionMVC.valueOf(e.getActionCommand())){
+            case facturasATRAS:                
+                this.facturas.dispose();
+                new Controlador_Principal( new Principal() ).principal() ;
+            break;
             case facturasCREAR:
                 this.facturas.dispose();
                 new Controlador_Factura(new Facturas()).facturas();
