@@ -6,6 +6,7 @@
 package Controlador;
 
 import Modelo.Modelo_Facturas;
+import Modelo.pojos.Factura;
 import Vistas.Facturas;
 import Vistas.Principal;
 import java.awt.event.ActionEvent;
@@ -41,9 +42,6 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
             facturas.setLocationRelativeTo(null);
             facturas.setResizable(false);
             
-            //Aqui técnicamente te imprimiría la tabla de clientes
-            //this.facturas.listafacturas.setModel(this.mf.mostrarF());
-            
             this.facturas.crear.setActionCommand("facturasCREAR");
             this.facturas.crear.addActionListener(this);
             
@@ -67,7 +65,7 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
              if (fila > -1){                
                 this.facturas.codfactura.setText( String.valueOf( this.facturas.listafacturas.getValueAt(fila, 0) ));
                 this.facturas.precio.setText( String.valueOf( this.facturas.listafacturas.getValueAt(fila, 1) ));
-                this.facturas.dni.setText( String.valueOf( this.facturas.listafacturas.getValueAt(fila, 1) ));
+                this.facturas.dni.setText( String.valueOf( this.facturas.listafacturas.getValueAt(fila, 2) ));
              }
         }
     }
@@ -102,31 +100,32 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
                  }
                  else
                  {
-                     this.facturas.ok.setText("No modificado");
+                     this.facturas.ok.setText("No modificada");
                  }
             break;
             case facturasELIMINAR:
                 if (f.FacExists(Integer.parseInt(this.facturas.codfactura.getText())))
                 {
-                    this.facturas.ok.setText("Eliminado");
+                    this.facturas.ok.setText("Eliminada");
                     this.facturas.listafacturas.setModel(f.getTabla());
                 }
                 else
                 {
-                    this.facturas.ok.setText("No eliminado");
+                    this.facturas.ok.setText("No eliminada");
                 }
             break;
             case facturasBUSCAR:
-                //Buscamos el código del usuario y si está 
-                /*if (this.mf.FacExist(Integer.parseInt(this.facturas.codfactura.getText())))
-                {
-                    this.facturas.ok.setText("Encontrado");
-                    //Aqui va que se actualice la tabla sola
+                if (this.facturas.codfacturabuscar.getText().equals("")) {
+                    this.facturas.dni.setText("");
+                    this.facturas.precio.setText("");
+                    this.facturas.codfactura.setText("");
+                }else{
+                   Factura fact= f.FacSearch(this.facturas.codfacturabuscar.getText());
+                    this.facturas.codfactura.setText(fact.getCodigofac());
+                    this.facturas.dni.setText(fact.getdni());
+                    this.facturas.precio.setText(""+fact.getTotal());
+                    
                 }
-                else
-                {
-                    this.facturas.ok.setText("No encontrado");
-                }*/
             break;
     }
     

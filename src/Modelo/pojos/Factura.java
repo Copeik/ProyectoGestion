@@ -9,14 +9,14 @@ package Modelo.pojos;
  *
  * @author elabu
  */
-public class Facturas {
+public class Factura {
     private String codigofac;
-    private String nombrecli;
+    private String dni;
     private double total;
 
-    public Facturas(String codigofac, String nombrecli, double total) {
+    public Factura(String codigofac, String dni, double total) {
         this.codigofac = codigofac;
-        this.nombrecli = nombrecli;
+        this.dni = dni;
         this.total = total;
     }
 
@@ -28,12 +28,12 @@ public class Facturas {
         this.codigofac = codigofac;
     }
 
-    public String getNombrecli() {
-        return nombrecli;
+    public String getdni() {
+        return dni;
     }
 
-    public void setNombrecli(String nombrecli) {
-        this.nombrecli = nombrecli;
+    public void setDni(String fdni) {
+        this.dni = dni;
     }
 
     public double getTotal() {
