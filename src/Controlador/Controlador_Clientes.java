@@ -77,24 +77,36 @@ public class Controlador_Clientes implements ActionListener, MouseListener{
         
         switch (Controlador_Clientes.AccionMVC.valueOf(e.getActionCommand())){
             case clientesGUARDAR:
-                if (this.clientes.dni.getText()!=null)
+                if (this.clientes.dni.getText().equals("")||this.clientes.nombre.getText().equals(""))
                 {
-                    a.ClientInsert(this.clientes.dni.getText(), this.clientes.nombre.getText());
+                    this.clientes.ok.setText("Complete todos los campos");
+                }else{
+                    if (a.ClientExists(this.clientes.dni.getText())==false){
+                                            a.ClientInsert(this.clientes.dni.getText(), this.clientes.nombre.getText());
                     this.clientes.ok.setText("Guardado");
                     this.clientes.listaclientes.setModel(a.getTabla());
+                    }else{
+                        this.clientes.ok.setText("Ya existe");
+                    }
+                        
+
                 }
             break;
             case clientesMODIFICAR:
-                if (this.clientes.dni.getText()!=null)
+                if (a.ClientExists(this.clientes.dni.getText())==false)
                 {
+                    this.clientes.ok.setText("No existe ese cliente");
+                }else{
                     a.ClientUpdate(this.clientes.dni.getText(), this.clientes.nombre.getText());
                     this.clientes.ok.setText("Actualizado");
                     this.clientes.listaclientes.setModel(a.getTabla());
                 }
             break;
             case clientesELIMINAR:
-                if (this.clientes.dni.getText()!=null)
+                if (a.ClientExists(this.clientes.dni.getText())==false)
                 {
+                    this.clientes.ok.setText("No existe ese cliente");
+                }else{
                     a.ClientDelete(this.clientes.dni.getText());
                         this.clientes.ok.setText("Eliminado");
                     this.clientes.listaclientes.setModel(a.getTabla());

@@ -55,14 +55,18 @@ public class Modelo_Facturas extends database {
      public boolean FacExists (int codigofac)
     {
         boolean res = false;
+        int count=0;
         
         String q = "SELECT * FROM facturas WHERE codigofac =" + codigofac;
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
             ResultSet cr = pstm.executeQuery();
-            if(cr.next())
-            {   
-               res=true; 
+            while(cr.next())
+            {  
+                count++;
+            }
+            if (count>=1) {
+                res=true;
             }
             pstm.close();
          }catch(SQLException e){

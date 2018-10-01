@@ -36,7 +36,7 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
         facturasBUSCAR,
         }
         
-        public void articulos()
+        public void facturas()
         {
             facturas.setVisible(true);
             facturas.setLocationRelativeTo(null);

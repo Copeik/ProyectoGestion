@@ -76,6 +76,7 @@ public class Controlador_Principal implements ActionListener, MouseListener{
                 break;
             case principalADMFACTURAS:
                 this.principal.dispose();
+                new Controlador_Facturas(new Facturas()).facturas();
              //   new Controlador_Facturas(new Factura()).factura();
                 break;
             

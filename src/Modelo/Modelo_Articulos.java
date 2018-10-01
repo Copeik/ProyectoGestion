@@ -15,6 +15,7 @@ import javax.swing.table.DefaultTableModel;
  * @author elabu
  */
 public class Modelo_Articulos extends database {
+    int count;
     
     public DefaultTableModel getTabla()
     {
@@ -55,15 +56,19 @@ public class Modelo_Articulos extends database {
     } 
      public boolean ArtExists (int codarticulo)
     {
+        count=0;
         boolean res = false;
         int idc=0;
         String q = "SELECT * FROM articulos WHERE codarticulo =" + codarticulo;
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
             ResultSet cr = pstm.executeQuery();
-            if(cr.next())
-            {   
-               res=true; 
+            while(cr.next())
+            {  
+                count++;
+            }
+            if (count>=1) {
+                res=true;
             }
             pstm.close();
          }catch(SQLException e){

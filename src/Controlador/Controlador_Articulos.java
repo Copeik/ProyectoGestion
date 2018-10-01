@@ -75,10 +75,17 @@ public class Controlador_Articulos implements ActionListener, MouseListener{
         
         switch (Controlador_Articulos.AccionMVC.valueOf(e.getActionCommand())){
             case articulosGUARDAR:
-                if (this.articulos.codarticulo.getText()!=null)
+                if (this.articulos.codarticulo.getText().equals("")||this.articulos.nombre.getText().equals("")||this.articulos.codarticulo.getText().equals(""))
                 {
-                    a.ArtInsert(Integer.parseInt(this.articulos.codarticulo.getText()), this.articulos.nombre.getText(),Double.parseDouble(this.articulos.precio.getText()));
-                    this.articulos.ok.setText("Guardado");
+                    this.articulos.ok.setText("Complete todos los campos");
+                }else{
+                     if (a.ArtExists(Integer.parseInt(this.articulos.codarticulo.getText()))==false) {
+                        a.ArtInsert(Integer.parseInt(this.articulos.codarticulo.getText()), this.articulos.nombre.getText(),Double.parseDouble(this.articulos.precio.getText()));
+                         this.articulos.ok.setText("Guardado");
+                    }else{
+                        this.articulos.ok.setText("No guardado");
+                    }
+                   
                     this.articulos.listaarticulos.setModel(a.getTabla());
                 }
             break;

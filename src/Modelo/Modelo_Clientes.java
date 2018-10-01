@@ -15,6 +15,7 @@ import javax.swing.table.DefaultTableModel;
  * @author elabu
  */
 public class Modelo_Clientes extends database {
+    int count;
         public DefaultTableModel getTabla()
     {
       DefaultTableModel tablemodel = new DefaultTableModel();
@@ -53,15 +54,19 @@ public class Modelo_Clientes extends database {
     }
      public boolean ClientExists (String dni)
     {
+        count=0;
         boolean res = false;
         int idc=0;
         String q = "SELECT * FROM cliente  WHERE dni='" + dni+"' ";
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
             ResultSet cr = pstm.executeQuery();
-            if(cr.next())
-            {   
-               res=true; 
+            while(cr.next())
+            {  
+                count++;
+            }
+            if (count>=1) {
+                res=true;
             }
             pstm.close();
          }catch(SQLException e){
@@ -111,7 +116,7 @@ public class Modelo_Clientes extends database {
         boolean res = false;
         int idc=0;
         String q = "UPDATE cliente \n" +
-        "SET dni='"+dni+"', column2='"+nombre+"' \n" +
+        "SET dni='"+dni+"', nombre='"+nombre+"' \n" +
         "WHERE dni='"+dni+"'";
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
