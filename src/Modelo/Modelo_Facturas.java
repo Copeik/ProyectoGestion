@@ -43,7 +43,7 @@ public class Modelo_Facturas extends database {
          while(res.next()){
                 data[i][0] = res.getString( "codigofac" );
                 data[i][1] = res.getString( "nombrecli" );
-                data[i][2] = res.getString( "total" );
+                data[i][2] = res.getLong("total" );
             i++;
          }
          res.close();
