@@ -6,6 +6,7 @@
 package Controlador;
 
 import Modelo.Modelo_Articulos;
+import Modelo.pojos.Cliente;
 import Vistas.Articulos;
 import Vistas.Principal;
 import java.awt.event.ActionEvent;
@@ -116,15 +117,15 @@ public class Controlador_Articulos implements ActionListener, MouseListener{
                 }
             break;
             case articulosBUSCAR:
-                //Buscamos el código del usuario y si está 
-                /*if (this.ma.ArtExist(Integer.parseInt(this.articulos.codarticulo.getText())))
-                {
-                    this.articulos.ok.setText("Encontrado");
-                    //Aqui va que se actualice la tabla sola
-                }
-                else
-                {
-                    this.articulos.ok.setText("No encontrado");
+                /*if (this.articulos.Articulobuscar.getText().equals("")) {
+                    this.articulos.codarticulo.setText("");
+                    this.articulos.nombre.setText("");
+                    this.articulos.precio.setText("");
+                }else{
+                   Cliente client= a.ClientSearch(this.clientes.DNIBusqueda.getText());
+                    this.articulos.codarticulo.setText("");
+                    this.articulos.nombre.setText("");
+                    this.articulos.precio.setText("");
                 }*/
             break;
     }

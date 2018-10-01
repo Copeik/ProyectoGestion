@@ -5,6 +5,7 @@
  */
 package Modelo;
 
+import Modelo.pojos.Cliente;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -131,6 +132,35 @@ public class Modelo_Clientes extends database {
          }
          return res;
 }
+          public Cliente ClientSearch (String dni)
+    {
+        Cliente cli = null;
+        count=0;
+        boolean res = false;
+        int idc=0;
+        String q = "SELECT * FROM cliente  WHERE dni='" + dni+"' ";
+        try {
+            PreparedStatement pstm = this.getConnection().prepareStatement(q);
+            ResultSet cr = pstm.executeQuery();
+            while(cr.next())
+            {  
+                cli= new Cliente(cr.getString("dni"),cr.getString("nombre"));
+                count++;
+            }
+            if (count>=1) {
+                res=true;
+            }
+            
+            pstm.close();
+         }catch(SQLException e){
+            System.err.println( e.getMessage() );
+       
+        
+         }
+        
+         return cli;
+}
+          
 
 
 

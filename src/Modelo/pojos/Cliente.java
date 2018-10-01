@@ -18,6 +18,10 @@ public class Cliente {
         this.nombre = nombre;
     }
 
+    public Cliente() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getDni() {
         return dni;
     }
