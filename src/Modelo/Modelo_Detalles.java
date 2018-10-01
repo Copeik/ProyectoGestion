@@ -15,17 +15,17 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author elabu
  */
-public class Modelo_Facturas extends database {
-    int count;
+public class Modelo_Detalles extends database {
+        int count;
     public DefaultTableModel getTabla()
     {
       DefaultTableModel tablemodel = new DefaultTableModel();
       int registros = 0;
-      String[] columNames = {"Codigo","DNI Cliente","Total"};
+      String[] columNames = {"Codigo articulo","Codigo factura","Precio final"};
       //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
       //para formar la matriz de datos
       try{
-         PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT count(*) as total1 FROM facturas");
+         PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT count(*) as total1 FROM detalles");
          ResultSet res = pstm.executeQuery();
          res.next();
          registros = res.getInt("total1");
@@ -37,13 +37,13 @@ public class Modelo_Facturas extends database {
     Object[][] data = new String[registros][5];
       try{
           //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT * FROM facturas");
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT * FROM detalles");
          ResultSet res = pstm.executeQuery();
          int i=0;
          while(res.next()){
-                data[i][0] = res.getString( "codigofac" );
-                data[i][1] = res.getString( "nombrecli" );
-                data[i][2] = res.getString("total" );
+                data[i][0] = res.getString( "codarticulo" );
+                data[i][1] = res.getString( "codigofac2" );
+                data[i][2] = res.getString("preciofinal" );
             i++;
          }
          res.close();
@@ -54,35 +54,12 @@ public class Modelo_Facturas extends database {
         }
         return tablemodel;
     } 
-     public boolean FacExists (int codigofac)
-    {
-        boolean res = false;
-        int count=0;
-        
-        String q = "SELECT * FROM facturas WHERE codigofac =" + codigofac;
-        try {
-            PreparedStatement pstm = this.getConnection().prepareStatement(q);
-            ResultSet cr = pstm.executeQuery();
-            while(cr.next())
-            {  
-                count++;
-            }
-            if (count>=1) {
-                res=true;
-            }
-            pstm.close();
-         }catch(SQLException e){
-            System.err.println( e.getMessage() );
-       
-        
-         }
-         return res;
-}
-     public boolean FacInsert (int codigofac, String nombrecli,double total)
+
+     public boolean DetInsert (int codarticulo, String codigofac2,double preciofinal)
     {
         boolean res = false;
         
-        String q = "INSERT INTO facturas VALUES ("+codigofac+",'"+nombrecli+"',"+total+")";
+        String q = "INSERT INTO detalles VALUES ("+codarticulo+",'"+codigofac2+"',"+preciofinal+")";
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
             pstm.execute();
@@ -97,15 +74,15 @@ public class Modelo_Facturas extends database {
          return res;
 }
      
-          public boolean FacDelete (int codigofac)
+          public boolean DetDelete (int codigofac2)
     {
         boolean res = false;
         int idc=0;
-        String q = "DELETE FROM facturas WHERE codigofac="+codigofac;
+        String q = "DELETE FROM detalles WHERE codigofac2="+codigofac2;
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
             pstm.execute();
-            System.out.println("Insertado con exito");
+            System.out.println("Eliminado");
             res=true; 
             pstm.close();
          }catch(SQLException e){
@@ -113,13 +90,13 @@ public class Modelo_Facturas extends database {
          }
          return res;
 }
-          public boolean FacUpdate (int codigofac, String nombrecli,double total)
+          public boolean FacUpdate (int codarticulo, String codigofac2,double preciofinal)
     {
         boolean res = false;
         int idc=0;
         String q = "UPDATE facturas \n" +
-        "SET codigofac="+codigofac+", nombreart='"+nombrecli+"', precioini="+total+" \n" +
-        "WHERE codigofac="+codigofac ;
+        "SET codarticulo="+codarticulo+", codigofac2='"+codigofac2+"', preciofinal="+preciofinal+" \n" +
+        "WHERE codigofac='"+codigofac2+"' AND codarticulo="+codarticulo ;
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
             pstm.execute();
@@ -165,3 +142,5 @@ public class Modelo_Facturas extends database {
 
 
 }
+
+
