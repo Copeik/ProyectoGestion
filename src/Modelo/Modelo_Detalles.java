@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Modelo_Detalles extends database {
         int count;
-    public DefaultTableModel getTabla()
+    public DefaultTableModel getTabla(String factura)
     {
       DefaultTableModel tablemodel = new DefaultTableModel();
       int registros = 0;
@@ -25,7 +25,7 @@ public class Modelo_Detalles extends database {
       //obtenemos la cantidad de registros existentes en la tabla y se almacena en la variable "registros"
       //para formar la matriz de datos
       try{
-         PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT count(*) as total1 FROM detalles");
+         PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT count(*) as total1 FROM detalles WHERE codigofac2='"+factura+"'");
          ResultSet res = pstm.executeQuery();
          res.next();
          registros = res.getInt("total1");
@@ -37,7 +37,7 @@ public class Modelo_Detalles extends database {
     Object[][] data = new String[registros][5];
       try{
           //realizamos la consulta sql y llenamos los datos en la matriz "Object[][] data"
-         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT * FROM detalles");
+         PreparedStatement pstm = this.getConnection().prepareStatement("SELECT * FROM detalles WHERE codigofac2='"+factura+"'");
          ResultSet res = pstm.executeQuery();
          int i=0;
          while(res.next()){

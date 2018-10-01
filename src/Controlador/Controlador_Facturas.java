@@ -7,6 +7,7 @@ package Controlador;
 
 import Modelo.Modelo_Facturas;
 import Modelo.pojos.Factura;
+import Vistas.Detalle;
 import Vistas.Facturas;
 import Vistas.Principal;
 import java.awt.event.ActionEvent;
@@ -19,6 +20,7 @@ import java.awt.event.MouseListener;
  * @author qiqer
  */
 public class Controlador_Facturas implements ActionListener, MouseListener{
+    public static String factura_M;
     
         Modelo_Facturas f= new Modelo_Facturas();
         Facturas facturas;
@@ -90,7 +92,16 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
                 new Controlador_Principal( new Principal() ).principal() ;
             break;
             case facturasCREAR:
-                this.facturas.dispose();
+                if (this.facturas.codfacturabuscar.getText().equals("")) {
+                    
+                }else if(f.FacExists(Integer.parseInt(this.facturas.codfacturabuscar.getText()))==false){
+                    factura_M=this.facturas.codfacturabuscar.getText();
+                    this.facturas.dispose();
+                    new Controlador_Detalle(new Detalle()).detalle();
+                }
+                
+                
+                
                 //new Controlador_Detalle(new Detalle()).detalle();
             break;
             case facturasMODIFICAR:

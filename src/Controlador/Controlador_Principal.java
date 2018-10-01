@@ -7,7 +7,7 @@ package Controlador;
 
 import Vistas.Articulos;
 import Vistas.Clientes;
-import Vistas.Factura;
+import Vistas.Detalle;
 import Vistas.Facturas;
 import Vistas.Principal;
 import java.awt.event.ActionEvent;
