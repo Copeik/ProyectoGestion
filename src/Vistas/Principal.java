@@ -27,6 +27,7 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         admclientes = new javax.swing.JButton();
         admarticulos = new javax.swing.JButton();
         admfacturas = new javax.swing.JButton();
@@ -35,23 +36,46 @@ public class Principal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 64)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Vibanken");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, 280, -1));
+
+        admclientes.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        admclientes.setForeground(new java.awt.Color(255, 255, 255));
         admclientes.setText("Administrar Clientes");
         admclientes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        admclientes.setBorderPainted(false);
+        admclientes.setContentAreaFilled(false);
         admclientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 admclientesActionPerformed(evt);
             }
         });
-        getContentPane().add(admclientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 120, 40));
+        getContentPane().add(admclientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 500, 270, 40));
 
+        admarticulos.setBackground(new java.awt.Color(0, 0, 204));
+        admarticulos.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        admarticulos.setForeground(new java.awt.Color(255, 255, 255));
         admarticulos.setText("Administrar Articulos");
         admarticulos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(admarticulos, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, -1, 37));
+        admarticulos.setBorderPainted(false);
+        admarticulos.setContentAreaFilled(false);
+        getContentPane().add(admarticulos, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 560, -1, 40));
 
+        admfacturas.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        admfacturas.setForeground(new java.awt.Color(255, 255, 255));
         admfacturas.setText("Administrar Facturas");
         admfacturas.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(admfacturas, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, -1, 37));
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 320));
+        admfacturas.setBorderPainted(false);
+        admfacturas.setContentAreaFilled(false);
+        getContentPane().add(admfacturas, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 500, -1, 37));
+
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondobuenobueno.jpg"))); // NOI18N
+        jLabel2.setText("Vibanken");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 830, 710));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -99,6 +123,7 @@ public class Principal extends javax.swing.JFrame {
     public javax.swing.JButton admarticulos;
     public javax.swing.JButton admclientes;
     public javax.swing.JButton admfacturas;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
