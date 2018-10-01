@@ -44,8 +44,8 @@ public class Controlador_Articulos implements ActionListener, MouseListener{
             articulos.setLocationRelativeTo(null);
             articulos.setResizable(false);
             
-            this.articulos.guardar.setActionCommand("articulosATRAS");
-            this.articulos.guardar.addActionListener(this);
+            this.articulos.atras.setActionCommand("articulosATRAS");
+            this.articulos.atras.addActionListener(this);
             
             this.articulos.guardar.setActionCommand("articulosGUARDAR");
             this.articulos.guardar.addActionListener(this);
