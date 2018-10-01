@@ -60,11 +60,21 @@ public class Controlador_Clientes implements ActionListener, MouseListener{
             this.clientes.buscar.setActionCommand("clientesBUSCAR");
             this.clientes.buscar.addActionListener(this);
             
+            this.clientes.listaclientes.addMouseListener(this);
             this.clientes.listaclientes.setModel(a.getTabla());
         }
         
-    public void mouseClicked(MouseEvent e) {}
+    public void mouseClicked(MouseEvent e) {
+        if( e.getButton()== 1)//boton izquierdo
+        {
+             int fila = this.clientes.listaclientes.rowAtPoint(e.getPoint());
+             if (fila > -1){                
+                this.clientes.dni.setText( String.valueOf( this.clientes.listaclientes.getValueAt(fila, 0) ));
+                this.clientes.nombre.setText( String.valueOf( this.clientes.listaclientes.getValueAt(fila, 1) ));
 
+             }
+        }
+    }
     public void mousePressed(MouseEvent e) {}
 
     public void mouseReleased(MouseEvent e) {}

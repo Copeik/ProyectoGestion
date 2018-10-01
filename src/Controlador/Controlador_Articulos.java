@@ -58,11 +58,21 @@ public class Controlador_Articulos implements ActionListener, MouseListener{
             this.articulos.buscar.setActionCommand("articulosBUSCAR");
             this.articulos.buscar.addActionListener(this);
             
+            this.articulos.listaarticulos.addMouseListener(this);
             this.articulos.listaarticulos.setModel(a.getTabla());
         }
         
-    public void mouseClicked(MouseEvent e) {}
-
+    public void mouseClicked(MouseEvent e) {
+        if( e.getButton()== 1)//boton izquierdo
+        {
+             int fila = this.articulos.listaarticulos.rowAtPoint(e.getPoint());
+             if (fila > -1){                
+                this.articulos.codarticulo.setText( String.valueOf( this.articulos.listaarticulos.getValueAt(fila, 0) ));
+                this.articulos.nombre.setText( String.valueOf( this.articulos.listaarticulos.getValueAt(fila, 1) ));
+                this.articulos.precio.setText( String.valueOf( this.articulos.listaarticulos.getValueAt(fila, 2) ));
+             }
+        }
+    }
     public void mousePressed(MouseEvent e) {}
 
     public void mouseReleased(MouseEvent e) {}
