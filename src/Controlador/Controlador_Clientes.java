@@ -6,6 +6,7 @@
 package Controlador;
 
 import Modelo.Modelo_Clientes;
+import Modelo.pojos.Cliente;
 import Vistas.Clientes;
 import Vistas.Principal;
 import java.awt.event.ActionEvent;
@@ -121,16 +122,14 @@ public class Controlador_Clientes implements ActionListener, MouseListener{
                 }
             break;
             case clientesBUSCAR:
-                //Buscamos el DNI del usuario y si está 
-                /*if (this.mc.ClientExist(this.clientes.dni.getText()))
-                {
-                    this.clientes.ok.setText("Encontrado");
-                    //Aqui va que se actualice la tabla sola
+                if (this.clientes.DNIBusqueda.getText().equals("")) {
+                    this.clientes.dni.setText("");
+                    this.clientes.nombre.setText("");
+                }else{
+                   Cliente client= a.ClientSearch(this.clientes.DNIBusqueda.getText());
+                    this.clientes.dni.setText(client.getDni());
+                    this.clientes.nombre.setText(client.getNombre());
                 }
-                else
-                {
-                    this.clientes.ok.setText("No encontrado");
-                }*/
             break;
     }
     
