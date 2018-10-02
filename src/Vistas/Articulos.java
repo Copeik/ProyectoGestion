@@ -112,7 +112,6 @@ public class Articulos extends javax.swing.JFrame {
         jPanel1.add(guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 520, 100, -1));
 
         articulobuscar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
-        articulobuscar.setForeground(new java.awt.Color(255, 255, 255));
         articulobuscar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 0, 153), 2, true));
         jPanel1.add(articulobuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 590, 160, 30));
 

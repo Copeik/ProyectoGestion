@@ -95,7 +95,6 @@ package Vistas;
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, -1, 20));
 
         nombre.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        nombre.setForeground(new java.awt.Color(255, 255, 255));
         nombre.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(204, 0, 204)));
         nombre.setCaretColor(new java.awt.Color(255, 255, 255));
         nombre.setDisabledTextColor(new java.awt.Color(255, 255, 255));
@@ -112,7 +111,6 @@ package Vistas;
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, 50, 20));
 
         dni.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        dni.setForeground(new java.awt.Color(255, 255, 255));
         dni.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(204, 0, 204)));
         jPanel1.add(dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 370, 170, -1));
 
@@ -149,7 +147,6 @@ package Vistas;
         jPanel1.add(ok, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 420, 220, 30));
 
         DNIBusqueda.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        DNIBusqueda.setForeground(new java.awt.Color(255, 255, 255));
         DNIBusqueda.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(153, 0, 153)));
         jPanel1.add(DNIBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 570, 140, -1));
 
