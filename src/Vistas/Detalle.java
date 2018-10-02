@@ -29,6 +29,7 @@ public class Detalle extends javax.swing.JFrame {
 
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        Tablaclientes = new javax.swing.JDialog();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -41,7 +42,6 @@ public class Detalle extends javax.swing.JFrame {
         fecha = new javax.swing.JTextField();
         enviar_factura = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         atras = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         Tabla_stock = new javax.swing.JTable();
@@ -58,6 +58,7 @@ public class Detalle extends javax.swing.JFrame {
         CodFac = new javax.swing.JLabel();
         eliminar_articulo = new javax.swing.JButton();
         Total = new javax.swing.JLabel();
+        Clientes = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -71,6 +72,17 @@ public class Detalle extends javax.swing.JFrame {
             }
         ));
         jScrollPane2.setViewportView(jTable1);
+
+        javax.swing.GroupLayout TablaclientesLayout = new javax.swing.GroupLayout(Tablaclientes.getContentPane());
+        Tablaclientes.getContentPane().setLayout(TablaclientesLayout);
+        TablaclientesLayout.setHorizontalGroup(
+            TablaclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        TablaclientesLayout.setVerticalGroup(
+            TablaclientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -119,8 +131,6 @@ public class Detalle extends javax.swing.JFrame {
         enviar_factura.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         enviar_factura.setText("Enviar");
 
-        jLabel10.setText("Precio:");
-
         atras.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         atras.setText("Atrás");
 
@@ -137,7 +147,8 @@ public class Detalle extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(Tabla_stock);
 
-        añadir_articulo.setText("Añadir");
+        añadir_articulo.setBackground(new java.awt.Color(255, 255, 255));
+        añadir_articulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/arrow-145761_960_720 (1).png"))); // NOI18N
         añadir_articulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 añadir_articuloActionPerformed(evt);
@@ -162,6 +173,13 @@ public class Detalle extends javax.swing.JFrame {
         jLabel3.setText("Cod articulo:");
 
         eliminar_articulo.setText("Eliminar");
+
+        Clientes.setText("...");
+        Clientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClientesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -215,10 +233,7 @@ public class Detalle extends javax.swing.JFrame {
                                 .addComponent(CodArt, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(eliminar_articulo))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(270, 270, 270)
-                                .addComponent(jLabel10)))))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(490, 490, 490)
@@ -230,6 +245,8 @@ public class Detalle extends javax.swing.JFrame {
                         .addGap(104, 104, 104))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(nombref, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Clientes, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40))))
@@ -251,11 +268,12 @@ public class Detalle extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel5))
-                .addGap(24, 24, 24)
+                .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nombref, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11)
+                    .addComponent(fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Clientes))
+                .addGap(9, 9, 9)
                 .addComponent(jLabel9)
                 .addGap(10, 10, 10)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -265,9 +283,7 @@ public class Detalle extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(jLabel10)
-                        .addGap(30, 30, 30)
+                        .addGap(62, 62, 62)
                         .addComponent(añadir_articulo))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(14, 14, 14)
@@ -294,7 +310,7 @@ public class Detalle extends javax.swing.JFrame {
                     .addComponent(enviar_factura)))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 900, 510));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -302,6 +318,10 @@ public class Detalle extends javax.swing.JFrame {
     private void añadir_articuloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadir_articuloActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_añadir_articuloActionPerformed
+
+    private void ClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClientesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ClientesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -342,12 +362,14 @@ public class Detalle extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton Clientes;
     public javax.swing.JTextField CodArt;
     public javax.swing.JLabel CodFac;
     public javax.swing.JLabel CodigoArticulo;
     public javax.swing.JLabel NombreArticulo;
     public javax.swing.JTextField PrecioArticulo;
     public javax.swing.JTable Tabla_stock;
+    public javax.swing.JDialog Tablaclientes;
     private javax.swing.JLabel Total;
     public javax.swing.JButton atras;
     public javax.swing.JButton añadir_articulo;
@@ -355,7 +377,6 @@ public class Detalle extends javax.swing.JFrame {
     public javax.swing.JButton enviar_factura;
     public javax.swing.JTextField fecha;
     public javax.swing.JLabel jLabel1;
-    public javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;

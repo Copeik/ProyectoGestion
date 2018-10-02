@@ -44,6 +44,7 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
         detalleAÑADIR,
         facturasELIMINAR,
         facturasBUSCAR,
+        ClientesShow
         }
 
 
@@ -68,6 +69,9 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
         
         this.det.añadir_articulo.setActionCommand("detalleAÑADIR");
         this.det.añadir_articulo.addActionListener(this);
+        
+        this.det.Clientes.setActionCommand("ClientesShow");
+        this.det.Clientes.addActionListener(this);
         
         this.det.listafactura.addMouseListener(this);
         this.det.listafactura.setModel(d.getTabla(factura_M));   
@@ -151,9 +155,14 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
                 break;
            case facturasBUSCAR:
                 
-                new Controlador_Facturas(new Facturas()).facturas();
+                
              //   new Controlador_Facturas(new Factura()).factura();
-                break;                
+                break;      
+           case ClientesShow:
+                
+                this.det.Tablaclientes.setVisible(true);
+             //   new Controlador_Facturas(new Factura()).factura();
+                break;   
           
     }
 
