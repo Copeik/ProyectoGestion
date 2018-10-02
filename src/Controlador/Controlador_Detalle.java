@@ -42,7 +42,7 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
         detalleATRAS,
         detalleENVIAR,
         detalleAÑADIR,
-        facturasELIMINAR,
+        detallesELIMINAR,
         facturasBUSCAR,
         ClientesShow
         }
@@ -61,8 +61,11 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
         det.setVisible(true);
 
         //Declaramos una acción utilizando los Enum para asignarle un evento
-        this.det.atras.setActionCommand("detalleATRAS");
+        this.det.atras.setActionCommand("detallesATRAS");
         this.det.atras.addActionListener(this);
+        
+        this.det.eliminar_articulo.setActionCommand("detallesELIMINAR");
+        this.det.eliminar_articulo.addActionListener(this);
         
         this.det.enviar_factura.setActionCommand("detalleENVIAR");
         this.det.enviar_factura.addActionListener(this);
@@ -91,6 +94,14 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
             @Override 
             public void mouseClicked(MouseEvent e) {
                 tablaproductos(e);
+             }
+});
+    }
+        private void setEventMouseCliked2(JTable tbl){
+        this.det.listafactura.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override 
+            public void mouseClicked(MouseEvent e) {
+                tabladetalles(e);
              }
 });
     }
@@ -136,17 +147,16 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
                 }else if (art.ArtExists(Integer.parseInt(this.det.CodigoArticulo.getText()))==true) {
                     this.d.DetInsert(Integer.parseInt(this.det.CodigoArticulo.getText()), factura_M, Double.parseDouble(this.det.PrecioArticulo.getText()));
                 }
+                this.det.Total.setText(""+this.d.getTotal(factura_M));
                 det.listafactura.setModel(d.getTabla(factura_M));  
                 
-{
-                    
-                }
+
              //   new Controlador_Facturas(new Factura()).factura();
                 break;
-            case facturasELIMINAR:
+            case detallesELIMINAR:
                 if (this.det.CodArt.getText().equals("")) {
                     
-                }else if (art.ArtExists(Integer.parseInt(this.det.CodigoArticulo.getText()))==true) {
+                }else if (art.ArtExists(Integer.parseInt(this.det.CodArt.getText()))==true) {
                     d.DetDelete(factura_M,Integer.parseInt(this.det.CodArt.getText()));
                 }
                 det.listafactura.setModel(d.getTabla(factura_M));  
