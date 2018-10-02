@@ -17,6 +17,15 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Modelo_Detalles extends database {
         int count;
+        
+    public double getTotal(String factura) throws SQLException{
+         PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT sum(preciofinal) as completo FROM detalles WHERE codigofac2='"+factura+"'");
+         ResultSet res = pstm.executeQuery();
+        res.getDouble("completo");
+        
+        
+        return 0;
+    }
     public DefaultTableModel getTabla(String factura)
     {
       DefaultTableModel tablemodel = new DefaultTableModel();
@@ -78,7 +87,7 @@ public class Modelo_Detalles extends database {
     {
         boolean res = false;
         int idc=0;
-        String q = "DELETE FROM detalles WHERE codigofac2='"+codigofac2+"'";
+        String q = "DELETE FROM detalles WHERE codigofac2='"+codigofac2+"' AND codarticulo="+codigoart;
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
             pstm.execute();

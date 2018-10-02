@@ -105,7 +105,7 @@ public class Modelo_Facturas extends database {
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
             pstm.execute();
-            System.out.println("Insertado con exito");
+            System.out.println("Delete con exito");
             res=true; 
             pstm.close();
          }catch(SQLException e){
@@ -119,7 +119,7 @@ public class Modelo_Facturas extends database {
         int idc=0;
         String q = "UPDATE facturas \n" +
         "SET codigofac="+codigofac+", nombreart='"+nombrecli+"', precioini="+total+" \n" +
-        "WHERE codigofac="+codigofac ;
+        "WHERE codigofac='"+codigofac+"'" ;
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
             pstm.execute();
