@@ -27,7 +27,6 @@ public class Articulos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollBar1 = new javax.swing.JScrollBar();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         precio = new javax.swing.JTextField();
@@ -35,26 +34,44 @@ public class Articulos extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         listaarticulos = new javax.swing.JTable();
         codarticulo = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        buscar = new javax.swing.JButton();
         guardar = new javax.swing.JButton();
+        articulobuscar = new javax.swing.JTextField();
+        buscar = new javax.swing.JButton();
         modificar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        ok = new javax.swing.JLabel();
         eliminar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         nombre = new javax.swing.JTextField();
-        ok = new javax.swing.JLabel();
-        articulobuscar = new javax.swing.JTextField();
         atras = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(null);
 
+        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Precio:");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(454, 382, 60, 21);
 
-        jLabel1.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        precio.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jPanel1.add(precio);
+        precio.setBounds(543, 383, 145, 27);
+
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Listado de artículos");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(192, 56, 441, 57);
 
+        listaarticulos.setBackground(new java.awt.Color(0, 0, 153));
+        listaarticulos.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        listaarticulos.setForeground(new java.awt.Color(255, 255, 255));
         listaarticulos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -82,115 +99,90 @@ public class Articulos extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(listaarticulos);
 
-        jLabel2.setText("Cod. Artículo:");
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(186, 144, 452, 191);
 
-        buscar.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        buscar.setText("Buscar");
+        codarticulo.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jPanel1.add(codarticulo);
+        codarticulo.setBounds(259, 383, 133, 27);
 
-        guardar.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        guardar.setBackground(new java.awt.Color(51, 0, 204));
+        guardar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        guardar.setForeground(new java.awt.Color(255, 255, 255));
         guardar.setText("Guardar");
+        guardar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 204), 2, true));
+        guardar.setContentAreaFilled(false);
+        jPanel1.add(guardar);
+        guardar.setBounds(150, 520, 100, 33);
 
-        modificar.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        articulobuscar.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        articulobuscar.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(articulobuscar);
+        articulobuscar.setBounds(450, 600, 160, 27);
+
+        buscar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        buscar.setForeground(new java.awt.Color(255, 255, 255));
+        buscar.setText("Buscar");
+        buscar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 204), 2, true));
+        buscar.setContentAreaFilled(false);
+        jPanel1.add(buscar);
+        buscar.setBounds(630, 600, 77, 33);
+
+        modificar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        modificar.setForeground(new java.awt.Color(255, 255, 255));
         modificar.setText("Modificar");
+        modificar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 204), 2, true));
+        modificar.setContentAreaFilled(false);
+        jPanel1.add(modificar);
+        modificar.setBounds(360, 520, 110, 30);
 
-        eliminar.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        eliminar.setText("Eliminar");
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Cod. Artículo:");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(106, 382, 116, 21);
 
-        jLabel4.setText("Nombre:");
-
+        ok.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         ok.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(ok);
+        ok.setBounds(310, 480, 197, 26);
 
-        atras.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        eliminar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        eliminar.setForeground(new java.awt.Color(255, 255, 255));
+        eliminar.setText("Eliminar");
+        eliminar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 204), 2, true));
+        eliminar.setContentAreaFilled(false);
+        jPanel1.add(eliminar);
+        eliminar.setBounds(570, 520, 100, 25);
+
+        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Nombre:");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(160, 430, 80, 21);
+        jPanel1.add(nombre);
+        nombre.setBounds(290, 430, 380, 30);
+
+        atras.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        atras.setForeground(new java.awt.Color(255, 255, 255));
         atras.setText("Atrás");
+        atras.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 0, 204), 2, true));
+        atras.setContentAreaFilled(false);
+        jPanel1.add(atras);
+        atras.setBounds(160, 600, 69, 25);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(atras)
-                .addGap(18, 18, 18)
-                .addComponent(guardar)
-                .addGap(18, 18, 18)
-                .addComponent(modificar)
-                .addGap(18, 18, 18)
-                .addComponent(eliminar)
-                .addGap(43, 43, 43))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(ok, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(articulobuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(buscar))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(codarticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel3)
-                                        .addGap(14, 14, 14)
-                                        .addComponent(precio, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(99, 99, 99)
-                        .addComponent(jLabel1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(jLabel1)
-                .addGap(26, 26, 26)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(codarticulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(precio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(eliminar)
-                    .addComponent(guardar)
-                    .addComponent(modificar)
-                    .addComponent(atras))
-                .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(buscar)
-                        .addComponent(articulobuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(ok, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39))
-        );
+        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Código de artículo:");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(270, 600, 157, 20);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondodef.jpg"))); // NOI18N
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(0, 0, 830, 700);
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 830, 700);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -241,8 +233,9 @@ public class Articulos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable listaarticulos;
     public javax.swing.JButton modificar;
