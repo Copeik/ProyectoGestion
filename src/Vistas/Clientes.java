@@ -9,7 +9,7 @@ package Vistas;
  *
  * @author qiqer
  */
-public class Clientes extends javax.swing.JFrame {
+    public class Clientes extends javax.swing.JFrame {
 
     /**
      * Creates new form Clientes

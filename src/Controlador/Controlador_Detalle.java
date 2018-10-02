@@ -5,31 +5,43 @@
  */
 package Controlador;
 
+import static Controlador.Controlador_Facturas.factura_M;
+import Modelo.Modelo_Articulos;
 import Modelo.Modelo_Detalles;
 import Vistas.Detalle;
 import Vistas.Facturas;
-import java.awt.event.ActionListener;
+
 import java.awt.event.MouseListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+
 
 /**
  *
  * @author qiqer
  */
-public class Controlador_Detalle {
+public class Controlador_Detalle implements ActionListener, MouseListener{
     
         Modelo_Detalles d= new Modelo_Detalles();
-        Detalle detalle;
+        Modelo_Articulos art=new Modelo_Articulos();
+        Detalle det;
         
     public Controlador_Detalle(Detalle detalle) {
-        this.detalle = detalle;
+        this.det = detalle;
     }
+
+
         
         public enum AccionMVC{
         
         //Acciones Vista opciones
-        facturasATRAS,
-        facturasCREAR,
-        facturasMODIFICAR,
+        detalleATRAS,
+        detalleENVIAR,
+        detalleAÑADIR,
         facturasELIMINAR,
         facturasBUSCAR,
         }
@@ -43,24 +55,58 @@ public class Controlador_Detalle {
     }*/
 
     void detalle() {
-        /*detalle.setLocationRelativeTo(null);
-        detalle.setTitle("Factura");
-        detalle.setVisible(true);
+        det.setLocationRelativeTo(null);
+        det.setTitle("Factura");
+        det.setVisible(true);
 
         //Declaramos una acción utilizando los Enum para asignarle un evento
-        this.detalle.admclientes.setActionCommand("principalADMCLIENTES");
-        this.detalle.admclientes.addActionListener(this);
+        this.det.atras.setActionCommand("detalleATRAS");
+        this.det.atras.addActionListener(this);
         
-        this.detalle.admarticulos.setActionCommand("principalADMARTICULOS");
-        this.detalle.admarticulos.addActionListener(this);
+        this.det.enviar_factura.setActionCommand("detalleENVIAR");
+        this.det.enviar_factura.addActionListener(this);
         
-        this.detalle.admfacturas.setActionCommand("principalADMFACTURAS");
-        this.detalle.admfacturas.addActionListener(this);
+        this.det.añadir_articulo.setActionCommand("detalleAÑADIR");
+        this.det.añadir_articulo.addActionListener(this);
+        
+        this.det.listafactura.addMouseListener(this);
+        this.det.listafactura.setModel(d.getTabla(factura_M));   
+        
+        this.det.Tabla_stock.addMouseListener(this);
+        this.det.Tabla_stock.setModel(art.getTabla());
+        
+        this.setEventMouseCliked(det.Tabla_stock);
+        this.setEventMouseCliked(det.listafactura);
+        
+        this.det.CodFac.setText(factura_M);
+        
         
     }
+    private void setEventMouseCliked(JTable tbl){
+        this.det.Tabla_stock.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override 
+            public void mouseClicked(MouseEvent e) {
+                tablaproductos(e);
+             }
+});
+    }
     
-            public void mouseClicked(MouseEvent e) {}
+    public void tablaproductos(MouseEvent e){
+        
+             int fila = this.det.Tabla_stock.rowAtPoint(e.getPoint());
+             if (fila > -1){                
+             this.det.CodigoArticulo.setText( String.valueOf( this.det.Tabla_stock.getValueAt(fila, 0) ));
+             this.det.NombreArticulo.setText( String.valueOf( this.det.Tabla_stock.getValueAt(fila, 1) ));
+             this.det.PrecioArticulo.setText( String.valueOf( this.det.Tabla_stock.getValueAt(fila, 2) ));
+    }}
+        public void tabladetalles(MouseEvent e){
+             int fila = this.det.Tabla_stock.rowAtPoint(e.getPoint());
+             if (fila > -1){                
+             this.det.CodArt.setText( String.valueOf( this.det.Tabla_stock.getValueAt(fila, 0) ));
 
+    }}
+        @Override
+             public void mouseClicked(MouseEvent e) {}
             public void mousePressed(MouseEvent e) {}
 
             public void mouseReleased(MouseEvent e) {}
@@ -72,21 +118,31 @@ public class Controlador_Detalle {
             public void actionPerformed(ActionEvent e) {
         
         switch (AccionMVC.valueOf(e.getActionCommand())){
-            case principalADMCLIENTES:
-                this.principal.dispose();
-                new Controlador_Clientes(new Clientes()).clientes();
+            case detalleATRAS:
+                this.det.dispose();
+                new Controlador_Facturas(new Facturas()).facturas();
                 break;
-            case principalADMARTICULOS:
-                this.principal.dispose();
-                new Controlador_Articulos(new Articulos()).articulos();
+            case detalleENVIAR:
+                
+               
                 break;
-            case principalADMFACTURAS:
-                this.principal.dispose();
+            case detalleAÑADIR:
+                
                 new Controlador_Facturas(new Facturas()).facturas();
              //   new Controlador_Facturas(new Factura()).factura();
                 break;
-         */   
+            case facturasELIMINAR:
+                
+                new Controlador_Facturas(new Facturas()).facturas();
+             //   new Controlador_Facturas(new Factura()).factura();
+                break;
+           case facturasBUSCAR:
+                
+                new Controlador_Facturas(new Facturas()).facturas();
+             //   new Controlador_Facturas(new Factura()).factura();
+                break;                
+          
     }
 
     
-}
+}}

@@ -94,7 +94,7 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
             case facturasCREAR:
                 if (this.facturas.codfacturabuscar.getText().equals("")) {
                     
-                }else if(f.FacExists(Integer.parseInt(this.facturas.codfacturabuscar.getText()))==false){
+                }else if(f.FacExists(this.facturas.codfacturabuscar.getText())==false){
                     factura_M=this.facturas.codfacturabuscar.getText();
                     this.facturas.dispose();
                     new Controlador_Detalle(new Detalle()).detalle();
@@ -105,9 +105,9 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
                 //new Controlador_Detalle(new Detalle()).detalle();
             break;
             case facturasMODIFICAR:
-                if (f.FacExists(Integer.parseInt(this.facturas.codfactura.getText())))
+                if (f.FacExists(this.facturas.codfactura.getText()))
                  {
-                     if (f.FacExists(Integer.parseInt(this.facturas.codfactura.getText())))
+                     if (f.FacExists(this.facturas.codfactura.getText()))
                      {
                      this.facturas.ok.setText("Modificada");
                      this.facturas.listafacturas.setModel(f.getTabla());
@@ -123,7 +123,7 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
                  }
             break;
             case facturasELIMINAR:
-                if (f.FacExists(Integer.parseInt(this.facturas.codfactura.getText())))
+                if (f.FacExists(this.facturas.codfactura.getText()))
                 {
                     this.facturas.ok.setText("Eliminada");
                     this.facturas.listafacturas.setModel(f.getTabla());

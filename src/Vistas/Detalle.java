@@ -54,8 +54,8 @@ public class Detalle extends javax.swing.JFrame {
         PrecioArticulo = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
+        CodArt = new javax.swing.JTextField();
+        CodFac = new javax.swing.JLabel();
         eliminar_articulo = new javax.swing.JButton();
         Total = new javax.swing.JLabel();
 
@@ -73,7 +73,7 @@ public class Detalle extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(490, 560));
@@ -161,8 +161,6 @@ public class Detalle extends javax.swing.JFrame {
 
         jLabel3.setText("Cod articulo:");
 
-        jLabel8.setText("jLabel8");
-
         eliminar_articulo.setText("Eliminar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -178,7 +176,7 @@ public class Detalle extends javax.swing.JFrame {
                         .addGap(490, 490, 490)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(CodFac, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(690, 690, 690)
                         .addComponent(jLabel6)
@@ -214,7 +212,7 @@ public class Detalle extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CodArt, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(eliminar_articulo))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -260,10 +258,10 @@ public class Detalle extends javax.swing.JFrame {
                 .addGap(11, 11, 11)
                 .addComponent(jLabel9)
                 .addGap(10, 10, 10)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addComponent(jLabel8))
-                .addGap(16, 16, 16)
+                    .addComponent(CodFac, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -282,7 +280,7 @@ public class Detalle extends javax.swing.JFrame {
                     .addComponent(PrecioArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel3)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CodArt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(eliminar_articulo)))
                 .addGap(13, 13, 13)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -296,8 +294,7 @@ public class Detalle extends javax.swing.JFrame {
                     .addComponent(enviar_factura)))
         );
 
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(10, 0, 900, 510);
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 900, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -345,36 +342,36 @@ public class Detalle extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel CodigoArticulo;
-    private javax.swing.JLabel NombreArticulo;
-    private javax.swing.JTextField PrecioArticulo;
-    private javax.swing.JTable Tabla_stock;
+    public javax.swing.JTextField CodArt;
+    public javax.swing.JLabel CodFac;
+    public javax.swing.JLabel CodigoArticulo;
+    public javax.swing.JLabel NombreArticulo;
+    public javax.swing.JTextField PrecioArticulo;
+    public javax.swing.JTable Tabla_stock;
     private javax.swing.JLabel Total;
-    private javax.swing.JButton atras;
-    private javax.swing.JButton añadir_articulo;
-    private javax.swing.JButton eliminar_articulo;
-    private javax.swing.JButton enviar_factura;
-    private javax.swing.JTextField fecha;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
+    public javax.swing.JButton atras;
+    public javax.swing.JButton añadir_articulo;
+    public javax.swing.JButton eliminar_articulo;
+    public javax.swing.JButton enviar_factura;
+    public javax.swing.JTextField fecha;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    public javax.swing.JLabel jLabel4;
+    public javax.swing.JLabel jLabel5;
+    public javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTable listafactura;
-    private javax.swing.JTextField nombref;
+    public javax.swing.JTable listafactura;
+    public javax.swing.JTextField nombref;
     // End of variables declaration//GEN-END:variables
 }

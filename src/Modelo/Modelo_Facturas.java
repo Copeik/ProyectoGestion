@@ -54,12 +54,12 @@ public class Modelo_Facturas extends database {
         }
         return tablemodel;
     } 
-     public boolean FacExists (int codigofac)
+     public boolean FacExists (String codigofac)
     {
         boolean res = false;
         int count=0;
         
-        String q = "SELECT * FROM facturas WHERE codigofac =" + codigofac;
+        String q = "SELECT * FROM facturas WHERE codigofac ='" + codigofac+"'";
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
             ResultSet cr = pstm.executeQuery();
