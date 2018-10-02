@@ -160,7 +160,7 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
                 break;      
            case ClientesShow:
                 
-                this.det.Tablaclientes.setVisible(true);
+                this.det.tablacliente.setVisible(true);
              //   new Controlador_Facturas(new Factura()).factura();
                 break;   
           
