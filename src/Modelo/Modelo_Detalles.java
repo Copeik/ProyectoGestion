@@ -19,12 +19,12 @@ public class Modelo_Detalles extends database {
         int count;
         
     public double getTotal(String factura) throws SQLException{
-         PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT sum(preciofinal) as completo FROM detalles WHERE codigofac2='"+factura+"'");
+         PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT SUM(preciofinal) as completo FROM detalles WHERE codigofac2='"+factura+"'");
          ResultSet res = pstm.executeQuery();
-        res.getDouble("completo");
         
         
-        return 0;
+        
+        return res.getDouble("completo");
     }
     public DefaultTableModel getTabla(String factura)
     {
@@ -88,6 +88,22 @@ public class Modelo_Detalles extends database {
         boolean res = false;
         int idc=0;
         String q = "DELETE FROM detalles WHERE codigofac2='"+codigofac2+"' AND codarticulo="+codigoart;
+        try {
+            PreparedStatement pstm = this.getConnection().prepareStatement(q);
+            pstm.execute();
+            System.out.println("Eliminado");
+            res=true; 
+            pstm.close();
+         }catch(SQLException e){
+            System.err.println( e.getMessage() );
+         }
+         return res;
+}
+          public boolean DetDelete2 (String codigofac2)
+    {
+        boolean res = false;
+        int idc=0;
+        String q = "DELETE FROM detalles WHERE codigofac2='"+codigofac2+"'";
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
             pstm.execute();
