@@ -74,11 +74,11 @@ public class Modelo_Detalles extends database {
          return res;
 }
      
-          public boolean DetDelete (int codigofac2)
+          public boolean DetDelete (String codigofac2,int codigoart)
     {
         boolean res = false;
         int idc=0;
-        String q = "DELETE FROM detalles WHERE codigofac2="+codigofac2;
+        String q = "DELETE FROM detalles WHERE codigofac2='"+codigofac2+"'";
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
             pstm.execute();

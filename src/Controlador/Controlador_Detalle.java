@@ -100,9 +100,9 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
              this.det.PrecioArticulo.setText( String.valueOf( this.det.Tabla_stock.getValueAt(fila, 2) ));
     }}
         public void tabladetalles(MouseEvent e){
-             int fila = this.det.Tabla_stock.rowAtPoint(e.getPoint());
+             int fila = this.det.listafactura.rowAtPoint(e.getPoint());
              if (fila > -1){                
-             this.det.CodArt.setText( String.valueOf( this.det.Tabla_stock.getValueAt(fila, 0) ));
+             this.det.CodArt.setText( String.valueOf( this.det.listafactura.getValueAt(fila, 0) ));
 
     }}
         @Override
@@ -127,13 +127,26 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
                
                 break;
             case detalleAÑADIR:
+                if (this.det.CodigoArticulo.getText().equals("")) {
+                    
+                }else if (art.ArtExists(Integer.parseInt(this.det.CodigoArticulo.getText()))==true) {
+                    this.d.DetInsert(Integer.parseInt(this.det.CodigoArticulo.getText()), factura_M, Double.parseDouble(this.det.PrecioArticulo.getText()));
+                }
+                det.listafactura.setModel(d.getTabla(factura_M));  
                 
-                new Controlador_Facturas(new Facturas()).facturas();
+{
+                    
+                }
              //   new Controlador_Facturas(new Factura()).factura();
                 break;
             case facturasELIMINAR:
+                if (this.det.CodArt.getText().equals("")) {
+                    
+                }else if (art.ArtExists(Integer.parseInt(this.det.CodigoArticulo.getText()))==true) {
+                    d.DetDelete(factura_M,Integer.parseInt(this.det.CodArt.getText()));
+                }
+                det.listafactura.setModel(d.getTabla(factura_M));  
                 
-                new Controlador_Facturas(new Facturas()).facturas();
              //   new Controlador_Facturas(new Factura()).factura();
                 break;
            case facturasBUSCAR:
