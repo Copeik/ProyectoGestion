@@ -57,7 +57,7 @@ public class Facturas extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Precio:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 350, -1, -1));
 
         precio.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         precio.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 0, 153), 2, true));
@@ -102,7 +102,7 @@ public class Facturas extends javax.swing.JFrame {
 
         codfactura.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         codfactura.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 0, 153), 2, true));
-        jPanel1.add(codfactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 396, 216, -1));
+        jPanel1.add(codfactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 400, 216, -1));
 
         buscar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         buscar.setForeground(new java.awt.Color(255, 255, 255));
@@ -144,7 +144,7 @@ public class Facturas extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Cód. Factura:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, -1, -1));
 
         ok.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         ok.setForeground(new java.awt.Color(255, 0, 0));

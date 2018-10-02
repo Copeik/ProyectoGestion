@@ -103,7 +103,7 @@ package Vistas;
                 nombreActionPerformed(evt);
             }
         });
-        jPanel1.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, 170, -1));
+        jPanel1.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 365, 170, 30));
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -112,7 +112,7 @@ package Vistas;
 
         dni.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         dni.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(204, 0, 204)));
-        jPanel1.add(dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 370, 170, -1));
+        jPanel1.add(dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 365, 170, 30));
 
         guardar.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         guardar.setForeground(new java.awt.Color(255, 255, 255));
@@ -144,16 +144,16 @@ package Vistas;
 
         ok.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         ok.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel1.add(ok, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 420, 220, 30));
+        jPanel1.add(ok, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 220, 30));
 
         DNIBusqueda.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         DNIBusqueda.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(153, 0, 153)));
-        jPanel1.add(DNIBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 570, 140, -1));
+        jPanel1.add(DNIBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 570, 160, 30));
 
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("DNI:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 570, 50, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 570, 50, -1));
 
         atras.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         atras.setForeground(new java.awt.Color(255, 255, 255));
