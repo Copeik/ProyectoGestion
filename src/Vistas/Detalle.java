@@ -29,9 +29,6 @@ public class Detalle extends javax.swing.JFrame {
 
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        tablacliente = new javax.swing.JDialog();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        tablacli = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -39,7 +36,6 @@ public class Detalle extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         listafactura = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
-        nombref = new javax.swing.JTextField();
         enviar_factura = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         atras = new javax.swing.JButton();
@@ -59,6 +55,7 @@ public class Detalle extends javax.swing.JFrame {
         eliminar_articulo = new javax.swing.JButton();
         Total = new javax.swing.JLabel();
         Clientes = new javax.swing.JButton();
+        nomfac = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -74,54 +71,6 @@ public class Detalle extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable1);
 
-        tablacli.setBackground(new java.awt.Color(51, 0, 51));
-        tablacli.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        tablacli.setForeground(new java.awt.Color(255, 255, 255));
-        tablacli.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Nombre de cliente", "DNI de cliente"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane4.setViewportView(tablacli);
-
-        javax.swing.GroupLayout tablaclienteLayout = new javax.swing.GroupLayout(tablacliente.getContentPane());
-        tablacliente.getContentPane().setLayout(tablaclienteLayout);
-        tablaclienteLayout.setHorizontalGroup(
-            tablaclienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-        );
-        tablaclienteLayout.setVerticalGroup(
-            tablaclienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-        );
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -132,17 +81,17 @@ public class Detalle extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("FACTURA");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 20, 220, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 30, 220, -1));
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Facturar a:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 100, 100, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 110, 100, -1));
 
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Código factura:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, 140, 29));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 160, 140, 29));
 
         listafactura.setBackground(new java.awt.Color(102, 0, 153));
         listafactura.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
@@ -174,22 +123,19 @@ public class Detalle extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(listafactura);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 240, 400, 160));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 210, 370, 160));
 
         jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Total:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 480, -1, -1));
-
-        nombref.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jPanel1.add(nombref, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 100, 180, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 470, -1, -1));
 
         enviar_factura.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         enviar_factura.setForeground(new java.awt.Color(255, 255, 255));
         enviar_factura.setText("Enviar");
         enviar_factura.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 0, 153), 2, true));
         enviar_factura.setContentAreaFilled(false);
-        jPanel1.add(enviar_factura, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 470, -1, -1));
+        jPanel1.add(enviar_factura, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 470, -1, -1));
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(672, 146, -1, -1));
 
         atras.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
@@ -197,7 +143,7 @@ public class Detalle extends javax.swing.JFrame {
         atras.setText("Atrás");
         atras.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 0, 153), 2, true));
         atras.setContentAreaFilled(false);
-        jPanel1.add(atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, -1, -1));
+        jPanel1.add(atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, -1, -1));
 
         Tabla_stock.setBackground(new java.awt.Color(102, 0, 153));
         Tabla_stock.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
@@ -215,7 +161,7 @@ public class Detalle extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(Tabla_stock);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 387, 160));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 387, 160));
 
         añadir_articulo.setBackground(new java.awt.Color(255, 255, 255));
         añadir_articulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/arrow-145761_960_720 (1).png"))); // NOI18N
@@ -231,31 +177,31 @@ public class Detalle extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Cód. artículo:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 120, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 120, -1));
 
         CodigoArticulo.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         CodigoArticulo.setForeground(new java.awt.Color(255, 255, 255));
         CodigoArticulo.setText("     ");
-        jPanel1.add(CodigoArticulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 190, 20));
+        jPanel1.add(CodigoArticulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 190, 20));
 
         jLabel11.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Nombre:");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 80, 29));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 80, 29));
 
         NombreArticulo.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         NombreArticulo.setForeground(new java.awt.Color(255, 255, 255));
         NombreArticulo.setText("    ");
-        jPanel1.add(NombreArticulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 230, -1));
+        jPanel1.add(NombreArticulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 200, -1));
 
         jLabel13.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Precio:");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, -1, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, -1, -1));
 
         PrecioArticulo.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         PrecioArticulo.setText("    ");
-        jPanel1.add(PrecioArticulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 160, 30));
+        jPanel1.add(PrecioArticulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 160, 30));
 
         jLabel14.setFont(new java.awt.Font("Trebuchet MS", 1, 48)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
@@ -265,25 +211,25 @@ public class Detalle extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Cód. artículo:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 420, 120, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 410, 120, 30));
 
         CodArt.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jPanel1.add(CodArt, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 420, 120, 30));
+        jPanel1.add(CodArt, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 410, 120, 30));
 
         CodFac.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         CodFac.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(CodFac, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 190, 250, 30));
+        jPanel1.add(CodFac, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 160, 230, 30));
 
         eliminar_articulo.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         eliminar_articulo.setForeground(new java.awt.Color(255, 255, 255));
         eliminar_articulo.setText("Eliminar");
         eliminar_articulo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 0, 153), 2, true));
         eliminar_articulo.setContentAreaFilled(false);
-        jPanel1.add(eliminar_articulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 420, -1, -1));
+        jPanel1.add(eliminar_articulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 410, -1, -1));
 
         Total.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         Total.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(Total, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 470, 200, 30));
+        jPanel1.add(Total, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 470, 200, 30));
 
         Clientes.setBackground(new java.awt.Color(204, 0, 0));
         Clientes.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
@@ -293,7 +239,11 @@ public class Detalle extends javax.swing.JFrame {
                 ClientesActionPerformed(evt);
             }
         });
-        jPanel1.add(Clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 100, 25, -1));
+        jPanel1.add(Clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 110, 25, -1));
+
+        nomfac.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        nomfac.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(nomfac, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 110, 180, 20));
 
         jLabel10.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -379,11 +329,8 @@ public class Detalle extends javax.swing.JFrame {
     public javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
     public javax.swing.JTable listafactura;
-    public javax.swing.JTextField nombref;
-    public javax.swing.JTable tablacli;
-    public javax.swing.JDialog tablacliente;
+    public static javax.swing.JLabel nomfac;
     // End of variables declaration//GEN-END:variables
 }

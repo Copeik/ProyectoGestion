@@ -16,17 +16,10 @@ import javax.swing.table.DefaultTableModel;
  * @author elabu
  */
 public class Modelo_Detalles extends database {
+    
         int count;
-        public static double Completo;
-    public void getTotal(String factura) throws SQLException{
-        
-         PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT preciofinal FROM detalles WHERE codigofac2='"+factura+"'");
-         ResultSet res = pstm.executeQuery();
-        Completo=Completo+res.getDouble("completo");
-        
-        
-        
-    }
+        public static double Completo=0;
+            
     public DefaultTableModel getTabla(String factura)
     {
       DefaultTableModel tablemodel = new DefaultTableModel();
@@ -74,6 +67,7 @@ public class Modelo_Detalles extends database {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
             pstm.execute();
             System.out.println("Insertado con exito");
+            Completo = Completo + preciofinal;
             res=true; 
             pstm.close();
          }catch(SQLException e){
@@ -88,11 +82,24 @@ public class Modelo_Detalles extends database {
     {
         boolean res = false;
         int idc=0;
+        double preciodelete=0;
+        try{
+         PreparedStatement pstm2 = this.getConnection().prepareStatement( "SELECT preciofinal FROM detalles WHERE codigofac2='"+codigofac2+"' AND codarticulo="+codigoart);
+         ResultSet res2 = pstm2.executeQuery();
+         res2.next();
+         preciodelete = res2.getDouble("preciofinal");
+         res2.close();
+      }catch(SQLException e){
+         System.err.println( e.getMessage() );
+      }
+        
+        
         String q = "DELETE FROM detalles WHERE codigofac2='"+codigofac2+"' AND codarticulo="+codigoart;
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
             pstm.execute();
             System.out.println("Eliminado");
+            Completo = Completo - preciodelete;
             res=true; 
             pstm.close();
          }catch(SQLException e){
@@ -136,6 +143,22 @@ public class Modelo_Detalles extends database {
          }
          return res;
     }
+          public double getTotal (String codfactura)
+          {
+              double totalisimo=0;
+              try{
+                    PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT preciofinal FROM detalles WHERE codigofac2='"+codfactura+"'");
+                    ResultSet res = pstm.executeQuery();
+                    while (res.next())
+                    {
+                        totalisimo = totalisimo + res.getDouble("preciofinal");
+                    }                    
+                    res.close();
+      }     catch(SQLException e){
+         System.err.println( e.getMessage() );
+      }
+            return totalisimo;
+          }
 
 }
 

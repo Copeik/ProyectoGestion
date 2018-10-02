@@ -12,6 +12,7 @@ import static Modelo.Modelo_Detalles.Completo;
 import Modelo.Modelo_Facturas;
 import Vistas.Detalle;
 import Vistas.Facturas;
+import Vistas.TablaCli;
 
 import java.awt.event.MouseListener;
 import java.awt.event.ActionEvent;
@@ -30,6 +31,7 @@ import javax.swing.JTable;
  * @author qiqer
  */
 public class Controlador_Detalle implements ActionListener, MouseListener{
+    
         Modelo_Facturas f = new Modelo_Facturas();
         Modelo_Detalles d= new Modelo_Detalles();
         Modelo_Articulos art=new Modelo_Articulos();
@@ -44,21 +46,13 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
         public enum AccionMVC{
         
         //Acciones Vista opciones
+        detalleCLIENTES,
         detalleATRAS,
         detalleENVIAR,
         detalleAÑADIR,
         detallesELIMINAR,
-        facturasBUSCAR,
-        ClientesShow
+        facturasBUSCAR,        
         }
-
-
-    
-    /*Factura detalle;
-    
-     Controlador_Detalles(Factura detalle) implements ActionListener, MouseListener{
-        this.detalle = detalle;
-    }*/
 
     void detalle() {
         det.setLocationRelativeTo(null);
@@ -66,6 +60,9 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
         det.setVisible(true);
 
         //Declaramos una acción utilizando los Enum para asignarle un evento
+        this.det.Clientes.setActionCommand("detalleCLIENTES");
+        this.det.Clientes.addActionListener(this);
+        
         this.det.atras.setActionCommand("detalleATRAS");
         this.det.atras.addActionListener(this);
         
@@ -76,11 +73,8 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
         this.det.enviar_factura.addActionListener(this);
         
         this.det.añadir_articulo.setActionCommand("detalleAÑADIR");
-        this.det.añadir_articulo.addActionListener(this);
-        
-        this.det.Clientes.setActionCommand("ClientesShow");
-        this.det.Clientes.addActionListener(this);
-        
+        this.det.añadir_articulo.addActionListener(this);        
+              
         this.det.listafactura.addMouseListener(this);
         this.det.listafactura.setModel(d.getTabla(factura_M));   
         
@@ -138,6 +132,11 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
             public void actionPerformed(ActionEvent e) {
         
         switch (AccionMVC.valueOf(e.getActionCommand())){
+            
+            case detalleCLIENTES:
+                new Controlador_TablaCli(new TablaCli()).tablacli();
+                break;
+                
             case detalleATRAS:
 
                     this.d.DetDelete2(factura_M);
@@ -146,10 +145,10 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
                 new Controlador_Facturas(new Facturas()).facturas();
                 break;
             case detalleENVIAR:
-                if (this.det.nombref.getText().equals("")) {
+                if (this.det.nomfac.getText().equals("")) {
                     
                 }else{
-                    this.f.FacInsert(factura_M, this.det.nombref.getText(), Double.parseDouble(this.det.Total.getText()));
+                    this.f.FacInsert(factura_M, this.det.nomfac.getText(), Double.parseDouble(this.det.Total.getText()));
                 }
                
                 break;
@@ -160,15 +159,8 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
                 }else if (art.ArtExists(Integer.parseInt(this.det.CodigoArticulo.getText()))==true) {
                     this.d.DetInsert(Integer.parseInt(this.det.CodigoArticulo.getText()), factura_M, Double.parseDouble(this.det.PrecioArticulo.getText()));
                 }
-        {
-            try {
-                this.d.getTotal(factura_M);
-                this.det.Total.setText(""+Completo);
-            } catch (SQLException ex) {
-                Logger.getLogger(Controlador_Detalle.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-                det.listafactura.setModel(d.getTabla(factura_M));  
+            this.det.Total.setText(""+this.d.getTotal(factura_M));
+            det.listafactura.setModel(d.getTabla(factura_M));  
                 
 
              //   new Controlador_Facturas(new Factura()).factura();
@@ -179,6 +171,7 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
                 }else if (art.ArtExists(Integer.parseInt(this.det.CodArt.getText()))==true) {
                     d.DetDelete(factura_M,Integer.parseInt(this.det.CodArt.getText()));
                 }
+                this.det.Total.setText(""+this.d.getTotal(factura_M));
                 det.listafactura.setModel(d.getTabla(factura_M));  
                 
              //   new Controlador_Facturas(new Factura()).factura();
@@ -187,12 +180,7 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
                 
                 
              //   new Controlador_Facturas(new Factura()).factura();
-                break;      
-           case ClientesShow:
-                
-                this.det.tablacliente.setVisible(true);
-             //   new Controlador_Facturas(new Factura()).factura();
-                break;   
+                break;     
           
     }
 
