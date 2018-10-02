@@ -136,7 +136,8 @@ public class Articulos extends javax.swing.JFrame {
 
         ok.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         ok.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel1.add(ok, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 470, 197, 26));
+        ok.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(ok, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, 390, 26));
 
         eliminar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         eliminar.setForeground(new java.awt.Color(255, 255, 255));

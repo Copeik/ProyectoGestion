@@ -108,11 +108,11 @@ public class Facturas extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Precio:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 350, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, -1, -1));
 
         precio.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         precio.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 0, 153), 2, true));
-        jPanel1.add(precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(576, 349, 145, -1));
+        jPanel1.add(precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 350, 145, -1));
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -186,11 +186,11 @@ public class Facturas extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("DNI:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 352, 50, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, 50, -1));
 
         dni.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         dni.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 0, 153), 2, true));
-        jPanel1.add(dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 349, 145, -1));
+        jPanel1.add(dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 145, -1));
 
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -199,7 +199,8 @@ public class Facturas extends javax.swing.JFrame {
 
         ok.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         ok.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel1.add(ok, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 450, 230, 30));
+        ok.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(ok, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 450, 380, 30));
 
         jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));

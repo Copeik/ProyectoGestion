@@ -144,7 +144,8 @@ package Vistas;
 
         ok.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         ok.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel1.add(ok, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 220, 30));
+        ok.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(ok, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, 410, 30));
 
         DNIBusqueda.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         DNIBusqueda.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(153, 0, 153)));

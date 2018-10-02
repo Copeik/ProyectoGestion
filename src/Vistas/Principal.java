@@ -75,7 +75,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondobuenobueno.jpg"))); // NOI18N
         jLabel2.setText("Vibanken");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 830, 730));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 830, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
