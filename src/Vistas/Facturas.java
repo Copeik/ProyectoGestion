@@ -46,16 +46,34 @@ public class Facturas extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         codfacturabuscar = new javax.swing.JTextField();
         atras = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(null);
 
+        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Precio:");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(440, 340, 80, 29);
 
-        jLabel1.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
-        jLabel1.setText("Listado de facturas");
+        precio.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        precio.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 0, 153), 2, true));
+        jPanel1.add(precio);
+        precio.setBounds(576, 349, 145, 33);
 
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Lista de facturas");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(210, 40, 380, 57);
+
+        listafacturas.setBackground(new java.awt.Color(51, 0, 153));
+        listafacturas.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        listafacturas.setForeground(new java.awt.Color(255, 255, 255));
         listafacturas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -83,132 +101,93 @@ public class Facturas extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(listafacturas);
 
-        buscar.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(179, 116, 452, 191);
+
+        codfactura.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        codfactura.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 0, 153), 2, true));
+        jPanel1.add(codfactura);
+        codfactura.setBounds(343, 396, 216, 33);
+
+        buscar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        buscar.setForeground(new java.awt.Color(255, 255, 255));
         buscar.setText("Buscar");
+        buscar.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(51, 0, 204)));
+        buscar.setContentAreaFilled(false);
+        jPanel1.add(buscar);
+        buscar.setBounds(540, 580, 120, 33);
 
-        crear.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        crear.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        crear.setForeground(new java.awt.Color(255, 255, 255));
         crear.setText("Crear factura");
+        crear.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(51, 0, 204)));
+        crear.setContentAreaFilled(false);
+        jPanel1.add(crear);
+        crear.setBounds(310, 630, 160, 33);
 
-        modificar.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        modificar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        modificar.setForeground(new java.awt.Color(255, 255, 255));
         modificar.setText("Modificar");
+        modificar.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(51, 0, 204)));
+        modificar.setContentAreaFilled(false);
+        jPanel1.add(modificar);
+        modificar.setBounds(340, 500, 130, 33);
 
-        eliminar.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        eliminar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        eliminar.setForeground(new java.awt.Color(255, 255, 255));
         eliminar.setText("Eliminar");
+        eliminar.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(51, 0, 204)));
+        eliminar.setContentAreaFilled(false);
+        jPanel1.add(eliminar);
+        eliminar.setBounds(560, 500, 120, 33);
 
+        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("DNI:");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(95, 352, 50, 29);
 
+        dni.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        dni.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 0, 153), 2, true));
+        jPanel1.add(dni);
+        dni.setBounds(202, 349, 145, 33);
+
+        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Cód. Factura:");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(170, 400, 154, 29);
 
+        ok.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         ok.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(ok);
+        ok.setBounds(290, 450, 230, 30);
 
+        jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Código factura:");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(150, 580, 173, 29);
 
-        atras.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        codfacturabuscar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        codfacturabuscar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 0, 153), 2, true));
+        jPanel1.add(codfacturabuscar);
+        codfacturabuscar.setBounds(340, 580, 180, 30);
+
+        atras.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        atras.setForeground(new java.awt.Color(255, 255, 255));
         atras.setText("Atrás");
+        atras.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(51, 0, 204)));
+        atras.setContentAreaFilled(false);
+        jPanel1.add(atras);
+        atras.setBounds(130, 500, 110, 33);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(dni, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(precio, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(jLabel5)
-                        .addGap(22, 22, 22))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(modificar)
-                        .addGap(48, 48, 48)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(codfactura, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(crear)
-                                .addGap(33, 33, 33)
-                                .addComponent(eliminar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                        .addContainerGap(80, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ok, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(180, 180, 180))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(99, 99, 99)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(atras)
-                        .addGap(43, 43, 43)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(codfacturabuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buscar)))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(precio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(codfactura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ok, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(9, 9, 9)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(modificar)
-                    .addComponent(eliminar)
-                    .addComponent(crear))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buscar)
-                    .addComponent(jLabel6)
-                    .addComponent(codfacturabuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(atras))
-                .addGap(47, 47, 47))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondodef.jpg"))); // NOI18N
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(0, 0, 830, 700);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 830, 700);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -258,6 +237,7 @@ public class Facturas extends javax.swing.JFrame {
     public javax.swing.JTextField dni;
     public javax.swing.JButton eliminar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

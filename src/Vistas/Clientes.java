@@ -46,7 +46,7 @@ package Vistas;
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -57,7 +57,7 @@ package Vistas;
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, -1, -1));
 
         listaclientes.setBackground(new java.awt.Color(51, 0, 153));
-        listaclientes.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        listaclientes.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         listaclientes.setForeground(new java.awt.Color(255, 255, 255));
         listaclientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -92,7 +92,7 @@ package Vistas;
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nombre:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, -1, 20));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, -1, 20));
 
         nombre.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         nombre.setForeground(new java.awt.Color(255, 255, 255));
@@ -104,72 +104,71 @@ package Vistas;
                 nombreActionPerformed(evt);
             }
         });
-        jPanel1.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 170, -1));
+        jPanel1.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, 170, -1));
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("DNI:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 360, 50, 20));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, 50, 20));
 
         dni.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         dni.setForeground(new java.awt.Color(255, 255, 255));
         dni.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(204, 0, 204)));
-        jPanel1.add(dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, 170, -1));
+        jPanel1.add(dni, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 370, 170, -1));
 
         guardar.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         guardar.setForeground(new java.awt.Color(255, 255, 255));
         guardar.setText("Guardar");
-        guardar.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 153, 51)));
+        guardar.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(51, 0, 204)));
         guardar.setContentAreaFilled(false);
-        jPanel1.add(guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 460, -1, -1));
+        jPanel1.add(guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 480, -1, -1));
 
         modificar.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         modificar.setForeground(new java.awt.Color(255, 255, 255));
         modificar.setText("Modificar");
-        modificar.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 153, 51)));
+        modificar.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(51, 0, 204)));
         modificar.setContentAreaFilled(false);
-        jPanel1.add(modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, -1, -1));
+        jPanel1.add(modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 480, -1, -1));
 
         eliminar.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         eliminar.setForeground(new java.awt.Color(255, 255, 255));
         eliminar.setText("Eliminar");
-        eliminar.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 153, 51)));
+        eliminar.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(51, 0, 204)));
         eliminar.setContentAreaFilled(false);
-        jPanel1.add(eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 460, -1, -1));
+        jPanel1.add(eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 480, -1, -1));
 
         buscar.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         buscar.setForeground(new java.awt.Color(255, 255, 255));
         buscar.setText("Buscar");
-        buscar.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 153, 51)));
+        buscar.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(51, 0, 204)));
         buscar.setContentAreaFilled(false);
-        jPanel1.add(buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 570, -1, -1));
+        jPanel1.add(buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 570, -1, -1));
 
         ok.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         ok.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel1.add(ok, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, 200, 22));
+        jPanel1.add(ok, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 420, 220, 30));
 
         DNIBusqueda.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         DNIBusqueda.setForeground(new java.awt.Color(255, 255, 255));
         DNIBusqueda.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(153, 0, 153)));
-        jPanel1.add(DNIBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 580, 140, -1));
+        jPanel1.add(DNIBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 570, 140, -1));
 
-        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("DNI:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 580, 40, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 570, 50, -1));
 
         atras.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         atras.setForeground(new java.awt.Color(255, 255, 255));
         atras.setText("Atrás");
-        atras.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 153, 51)));
+        atras.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(51, 0, 204)));
         atras.setContentAreaFilled(false);
         jPanel1.add(atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 570, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondodef.jpg"))); // NOI18N
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 700));
 
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 830, 700);
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
