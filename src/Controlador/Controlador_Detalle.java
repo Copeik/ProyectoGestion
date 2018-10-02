@@ -8,6 +8,8 @@ package Controlador;
 import static Controlador.Controlador_Facturas.factura_M;
 import Modelo.Modelo_Articulos;
 import Modelo.Modelo_Detalles;
+import static Modelo.Modelo_Detalles.Completo;
+import Modelo.Modelo_Facturas;
 import Vistas.Detalle;
 import Vistas.Facturas;
 
@@ -16,6 +18,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 
@@ -25,7 +30,7 @@ import javax.swing.JTable;
  * @author qiqer
  */
 public class Controlador_Detalle implements ActionListener, MouseListener{
-    
+        Modelo_Facturas f = new Modelo_Facturas();
         Modelo_Detalles d= new Modelo_Detalles();
         Modelo_Articulos art=new Modelo_Articulos();
         Detalle det;
@@ -61,7 +66,7 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
         det.setVisible(true);
 
         //Declaramos una acción utilizando los Enum para asignarle un evento
-        this.det.atras.setActionCommand("detallesATRAS");
+        this.det.atras.setActionCommand("detalleATRAS");
         this.det.atras.addActionListener(this);
         
         this.det.eliminar_articulo.setActionCommand("detallesELIMINAR");
@@ -134,20 +139,35 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
         
         switch (AccionMVC.valueOf(e.getActionCommand())){
             case detalleATRAS:
+
+                    this.d.DetDelete2(factura_M);
+                
                 this.det.dispose();
                 new Controlador_Facturas(new Facturas()).facturas();
                 break;
             case detalleENVIAR:
-                
+                if (this.det.nombref.getText().equals("")) {
+                    
+                }else{
+                    this.f.FacInsert(factura_M, this.det.nombref.getText(), Double.parseDouble(this.det.Total.getText()));
+                }
                
                 break;
             case detalleAÑADIR:
+                
                 if (this.det.CodigoArticulo.getText().equals("")) {
                     
                 }else if (art.ArtExists(Integer.parseInt(this.det.CodigoArticulo.getText()))==true) {
                     this.d.DetInsert(Integer.parseInt(this.det.CodigoArticulo.getText()), factura_M, Double.parseDouble(this.det.PrecioArticulo.getText()));
                 }
-                this.det.Total.setText(""+this.d.getTotal(factura_M));
+        {
+            try {
+                this.d.getTotal(factura_M);
+                this.det.Total.setText(""+Completo);
+            } catch (SQLException ex) {
+                Logger.getLogger(Controlador_Detalle.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 det.listafactura.setModel(d.getTabla(factura_M));  
                 
 

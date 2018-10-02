@@ -17,14 +17,15 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Modelo_Detalles extends database {
         int count;
+        public static double Completo;
+    public void getTotal(String factura) throws SQLException{
         
-    public double getTotal(String factura) throws SQLException{
-         PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT SUM(preciofinal) as completo FROM detalles WHERE codigofac2='"+factura+"'");
+         PreparedStatement pstm = this.getConnection().prepareStatement( "SELECT preciofinal FROM detalles WHERE codigofac2='"+factura+"'");
          ResultSet res = pstm.executeQuery();
+        Completo=Completo+res.getDouble("completo");
         
         
         
-        return res.getDouble("completo");
     }
     public DefaultTableModel getTabla(String factura)
     {
