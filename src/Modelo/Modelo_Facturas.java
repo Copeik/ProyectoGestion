@@ -78,11 +78,11 @@ public class Modelo_Facturas extends database {
          }
          return res;
 }
-     public boolean FacInsert (int codigofac, String nombrecli,double total)
+     public boolean FacInsert (String codigofac, String nombrecli,double total)
     {
         boolean res = false;
         
-        String q = "INSERT INTO facturas VALUES ("+codigofac+",'"+nombrecli+"',"+total+")";
+        String q = "INSERT INTO facturas VALUES ('"+codigofac+"','"+nombrecli+"',"+total+")";
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
             pstm.execute();
@@ -97,11 +97,11 @@ public class Modelo_Facturas extends database {
          return res;
 }
      
-          public boolean FacDelete (int codigofac)
+          public boolean FacDelete (String codigofac)
     {
         boolean res = false;
         int idc=0;
-        String q = "DELETE FROM facturas WHERE codigofac="+codigofac;
+        String q = "DELETE FROM facturas WHERE codigofac='"+codigofac+"'";
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
             pstm.execute();
