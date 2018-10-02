@@ -28,6 +28,9 @@ public class Facturas extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollBar1 = new javax.swing.JScrollBar();
+        tablacli = new javax.swing.JDialog();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         precio = new javax.swing.JTextField();
@@ -47,6 +50,54 @@ public class Facturas extends javax.swing.JFrame {
         codfacturabuscar = new javax.swing.JTextField();
         atras = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+
+        jTable1.setBackground(new java.awt.Color(51, 0, 204));
+        jTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(255, 255, 255));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Nombre del cliente", "DNI del cliente"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTable1);
+
+        javax.swing.GroupLayout tablacliLayout = new javax.swing.GroupLayout(tablacli.getContentPane());
+        tablacli.getContentPane().setLayout(tablacliLayout);
+        tablacliLayout.setHorizontalGroup(
+            tablacliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+        );
+        tablacliLayout.setVerticalGroup(
+            tablacliLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -227,9 +278,12 @@ public class Facturas extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     public javax.swing.JTable listafacturas;
     public javax.swing.JButton modificar;
     public javax.swing.JLabel ok;
     public javax.swing.JTextField precio;
+    public javax.swing.JDialog tablacli;
     // End of variables declaration//GEN-END:variables
 }
