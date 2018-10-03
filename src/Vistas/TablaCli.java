@@ -29,8 +29,10 @@ public class TablaCli extends javax.swing.JFrame {
 
         jScrollPane4 = new javax.swing.JScrollPane();
         tablaclientes = new javax.swing.JTable();
+        atras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         tablaclientes.setBackground(new java.awt.Color(51, 0, 51));
         tablaclientes.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
@@ -69,15 +71,26 @@ public class TablaCli extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(tablaclientes);
 
+        atras.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        atras.setText("Atrás");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(161, 161, 161)
+                .addComponent(atras)
+                .addContainerGap(162, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(atras)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -119,6 +132,7 @@ public class TablaCli extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton atras;
     private javax.swing.JScrollPane jScrollPane4;
     public javax.swing.JTable tablaclientes;
     // End of variables declaration//GEN-END:variables

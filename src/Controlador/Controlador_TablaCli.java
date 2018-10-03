@@ -29,6 +29,12 @@ public class Controlador_TablaCli implements ActionListener, MouseListener{
         this.tablacli = tablacli;
     }
     
+    public enum AccionMVC{
+        
+        //Acciones Vista 
+        tablacliATRAS,       
+        }
+    
     void tablacli ()
     {        
         tablacli.setLocationRelativeTo(null);
@@ -37,6 +43,9 @@ public class Controlador_TablaCli implements ActionListener, MouseListener{
         
         this.tablacli.tablaclientes.addMouseListener(this);
         this.tablacli.tablaclientes.setModel(cli.getTabla());
+        
+        this.tablacli.atras.setActionCommand("tablacliATRAS");
+        this.tablacli.atras.addActionListener(this);
     }
     
      public void mouseClicked(MouseEvent e) {
@@ -49,11 +58,19 @@ public class Controlador_TablaCli implements ActionListener, MouseListener{
                 this.tablacli.dispose();
         }
     }
+     
     
     
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        switch (AccionMVC.valueOf(e.getActionCommand())){
+                
+            case tablacliATRAS:
+                
+                this.tablacli.dispose();
+                break;
+     }
     }
 
     @Override
