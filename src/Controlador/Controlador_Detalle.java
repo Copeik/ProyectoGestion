@@ -32,18 +32,19 @@ import javax.swing.JTable;
  */
 public class Controlador_Detalle implements ActionListener, MouseListener{
     
+    //Creamos los objetos para poder usar los métodos y el de las vistas
         Modelo_Facturas f = new Modelo_Facturas();
         Modelo_Detalles d= new Modelo_Detalles();
         Modelo_Articulos art=new Modelo_Articulos();
         Detalle det;
         Facturas fac;
         
+        //Creamos el controlador
     public Controlador_Detalle(Detalle detalle) {
         this.det = detalle;
     }
 
-
-        
+        //Necesitamos un Enum para la lista de posibles acciones en la vista
         public enum AccionMVC{
         
         //Acciones Vista opciones
@@ -55,12 +56,12 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
         facturasBUSCAR,        
         }
 
+         //Aqui vendrán recogidos todas las posibles acciones de la vista y su estado
     void detalle() {
         det.setLocationRelativeTo(null);
         det.setTitle("Factura");
         det.setVisible(true);
 
-        //Declaramos una acción utilizando los Enum para asignarle un evento
         this.det.Clientes.setActionCommand("detalleCLIENTES");
         this.det.Clientes.addActionListener(this);
         
@@ -79,16 +80,20 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
         this.det.listafactura.addMouseListener(this);
         this.det.listafactura.setModel(d.getTabla(factura_M));   
         
+        //Aqui es donde mediante un método imprimimos la tabla con todos los datos de la base de datos
         this.det.Tabla_stock.addMouseListener(this);
         this.det.Tabla_stock.setModel(art.getTabla());
         
+        //Necesitamos otros 2 eventos para otras 2 tablas
         this.setEventMouseCliked(det.Tabla_stock);
         this.setEventMouseCliked(det.listafactura);
         
+        //Mostramos en un valor el parámetro que nos viene dado actualizado
         this.det.CodFac.setText(factura_M);
         
         
     }
+    //Usamos los siguientes 2 eventos para que cuando clickemos en las tablas nos cojan los datos clickados y podamos darles otro uso
     private void setEventMouseCliked(JTable tbl){
         this.det.Tabla_stock.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override 
@@ -106,6 +111,7 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
 });
     }
     
+    //Con estos mouseclicked controlamos que podamos clickar sobre una tabla para poder recoger esos datos y mostrarlos en otro campo
     public void tablaproductos(MouseEvent e){
         
              int fila = this.det.Tabla_stock.rowAtPoint(e.getPoint());
@@ -132,19 +138,25 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
 
             public void actionPerformed(ActionEvent e) {
         
+                //Switch-case para controlar qué hace cada botón en la vista exactamente
         switch (AccionMVC.valueOf(e.getActionCommand())){
             
+            //Botón clientes en el cual nos abrirá una ventana con la lista de clientes 
             case detalleCLIENTES:
                 new Controlador_TablaCli(new TablaCli()).tablacli();
                 break;
                 
+                //Botón de Atrás que nos cierra la vista actual y nos abre otra vez la de opciones
             case detalleATRAS:
-
+                
+                //En este caso también nos borra lo que hayamos ido guardando en la base de datos si no le hemos dado a enviar
                     this.d.DetDelete2(factura_M);
                 
                 this.det.dispose();
                 new Controlador_Facturas(new Facturas()).facturas();
                 break;
+                
+                //Botón Enviar que nos permitirá meter facturas en la base de datos
             case detalleENVIAR:
                 if (this.det.nomfac.getText().equals("")) {
                     
@@ -155,6 +167,8 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
                 }
                
                 break;
+                
+                //Botón Añadir que nos permitirá meter detalles en la base de datos
             case detalleAÑADIR:
                 
                 if (this.det.CodigoArticulo.getText().equals("")) {
@@ -162,28 +176,24 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
                 }else if (art.ArtExists(Integer.parseInt(this.det.CodigoArticulo.getText()))==true) {
                     this.d.DetInsert(Integer.parseInt(this.det.CodigoArticulo.getText()), factura_M, Double.parseDouble(this.det.PrecioArticulo.getText()));
                 }
+                //Jugamos con las variables para sacar el precio total siempre
             this.det.Total.setText(""+this.d.getTotal(factura_M));
-            det.listafactura.setModel(d.getTabla(factura_M));  
-                
-
-             //   new Controlador_Facturas(new Factura()).factura();
+            //Actualizamos la tabla
+            det.listafactura.setModel(d.getTabla(factura_M));                 
                 break;
+                
+                //Botón Eliminar que nos permite eliminar un detalle de la base de datos
             case detallesELIMINAR:
                 if (this.det.CodArt.getText().equals("")) {
                     
                 }else if (art.ArtExists(Integer.parseInt(this.det.CodArt.getText()))==true) {
                     d.DetDelete(factura_M,Integer.parseInt(this.det.CodArt.getText()));
                 }
+                //Jugamos con las variables para sacar el precio total siempre
                 this.det.Total.setText(""+this.d.getTotal(factura_M));
+                //Actualizamos la tabla
                 det.listafactura.setModel(d.getTabla(factura_M));  
-                
-             //   new Controlador_Facturas(new Factura()).factura();
-                break;
-           case facturasBUSCAR:
-                
-                
-             //   new Controlador_Facturas(new Factura()).factura();
-                break;     
+                break;    
           
     }
 
