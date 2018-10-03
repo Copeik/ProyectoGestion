@@ -17,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Modelo_Facturas extends database {
     int count;
+    //getTabla() nos devuelve la tabla con los valores de base de datos.
     public DefaultTableModel getTabla()
     {
       DefaultTableModel tablemodel = new DefaultTableModel();
@@ -54,6 +55,7 @@ public class Modelo_Facturas extends database {
         }
         return tablemodel;
     } 
+    //En este metodo metemos la claveprimaria y comprobamos que existe si no existe devolvera false.
      public boolean FacExists (String codigofac)
     {
         boolean res = false;
@@ -78,6 +80,7 @@ public class Modelo_Facturas extends database {
          }
          return res;
 }
+     //En este metodo Insertamos una nueva tupla en la BBDD 
      public boolean FacInsert (String codigofac, String nombrecli,double total)
     {
         boolean res = false;
@@ -96,7 +99,7 @@ public class Modelo_Facturas extends database {
          }
          return res;
 }
-     
+      //En este metodo eliminamos una tupla en la BBDD buscando esa tupla por la clave primaria
           public boolean FacDelete (String codigofac)
     {
         boolean res = false;
@@ -112,7 +115,8 @@ public class Modelo_Facturas extends database {
             System.err.println( e.getMessage() );
          }
          return res;
-}
+}   
+          //En este metodo Actualizamos una tupla en la BBDD , buscando esa tupla con la clave primaria
           public boolean FacUpdate (String codigofac, String nombrecli,double total)
     {
         boolean res = false;
@@ -131,6 +135,7 @@ public class Modelo_Facturas extends database {
          }
          return res;
 }
+          //Aqui realizamos la busqueda y devolvemos la tupla buscada por la clave primaria y la devolvemos como un objeto para poder ser usado.
           public Factura FacSearch (String codfac)
     {
         Factura fac = null;

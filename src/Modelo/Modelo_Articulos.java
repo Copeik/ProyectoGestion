@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Modelo_Articulos extends database {
     int count;
-    
+    //getTabla() nos devuelve la tabla con los valores de base de datos.
     public DefaultTableModel getTabla()
     {
       DefaultTableModel tablemodel = new DefaultTableModel();
@@ -57,11 +57,13 @@ public class Modelo_Articulos extends database {
         }
         return tablemodel;
     } 
+    //En este metodo metemos la claveprimaria y comprobamos que existe si no existe devolvera false.
      public boolean ArtExists (int codarticulo)
     {
         count=0;
         boolean res = false;
         int idc=0;
+        //preparamos la consulta
         String q = "SELECT * FROM articulos WHERE codarticulo =" + codarticulo;
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
@@ -81,6 +83,7 @@ public class Modelo_Articulos extends database {
          }
          return res;
 }
+     //En este metodo Insertamos una nueva tupla en la BBDD 
      public boolean ArtInsert (int codarticulo, String nombreart,double precioini)
     {
         boolean res = false;
@@ -99,7 +102,7 @@ public class Modelo_Articulos extends database {
          }
          return res;
 }
-     
+    //En este metodo eliminamos una tupla en la BBDD buscando esa tupla por la clave primaria
           public boolean ArtDelete (int codarticulo)
     {
         boolean res = false;
@@ -116,6 +119,7 @@ public class Modelo_Articulos extends database {
          }
          return res;
 }
+     //En este metodo Actualizamos una tupla en la BBDD , buscando esa tupla con la clave primaria
           public boolean ArtUpdate (int codarticulo, String nombreart,double precioini)
     {
         boolean res = false;
@@ -136,6 +140,7 @@ public class Modelo_Articulos extends database {
          }
          return res;
 }
+     //Aqui realizamos la busqueda y devolvemos la tupla buscada por la clave primaria y la devolvemos como un objeto para poder ser usado.
           public Articulo ArtSearch (int codarticulo)
     {
         Articulo art = null;

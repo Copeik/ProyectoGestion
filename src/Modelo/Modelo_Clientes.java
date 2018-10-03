@@ -17,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Modelo_Clientes extends database {
     int count;
+    //getTabla() nos devuelve la tabla con los valores de base de datos.
         public DefaultTableModel getTabla()
     {
       DefaultTableModel tablemodel = new DefaultTableModel();
@@ -53,6 +54,7 @@ public class Modelo_Clientes extends database {
         }
         return tablemodel;
     }
+        //En este metodo metemos la claveprimaria y comprobamos que existe si no existe devolvera false.
      public boolean ClientExists (String dni)
     {
         count=0;
@@ -77,6 +79,7 @@ public class Modelo_Clientes extends database {
          }
          return res;
 }
+      //En este metodo Insertamos una nueva tupla en la BBDD
      public boolean ClientInsert (String dni, String nombre)
     {
         boolean res = false;
@@ -95,6 +98,7 @@ public class Modelo_Clientes extends database {
          }
          return res;
 }
+     //En este metodo eliminamos una tupla en la BBDD buscando esa tupla por la clave primaria
           public boolean ClientDelete (String dni)
     {
         boolean res = false;
@@ -112,6 +116,7 @@ public class Modelo_Clientes extends database {
          }
          return res;
 }
+          //En este metodo Actualizamos una tupla en la BBDD , buscando esa tupla con la clave primaria
           public boolean ClientUpdate (String dni, String nombre)
     {
         boolean res = false;
@@ -132,6 +137,7 @@ public class Modelo_Clientes extends database {
          }
          return res;
 }
+          //Aqui realizamos la busqueda y devolvemos la tupla buscada por la clave primaria y la devolvemos como un objeto para poder ser usado.
           public Cliente ClientSearch (String dni)
     {
         Cliente cli = null;
