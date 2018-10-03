@@ -20,27 +20,32 @@ import java.awt.event.MouseListener;
  */
 public class Controlador_TablaCli implements ActionListener, MouseListener{
     
+    //Creamos los objetos para poder usar los métodos y el de la vista
     Modelo.Modelo_Clientes cli = new Modelo_Clientes();
     Detalle det;
     TablaCli tablacli;
     
+    //Creamos el controlador
     public Controlador_TablaCli (TablaCli tablacli)
     {
         this.tablacli = tablacli;
     }
     
+    //Necesitamos un Enum para la lista de posibles acciones en la vista
     public enum AccionMVC{
         
         //Acciones Vista 
         tablacliATRAS,       
         }
     
+    //Aqui vendrán recogidos todas las posibles acciones de la vista y su estado
     void tablacli ()
     {        
         tablacli.setLocationRelativeTo(null);
         tablacli.setTitle("Tabla Clientes");
         tablacli.setVisible(true);
         
+        //Aqui es donde mediante un método imprimimos la tabla con todos los datos de la base de datos
         this.tablacli.tablaclientes.addMouseListener(this);
         this.tablacli.tablaclientes.setModel(cli.getTabla());
         
@@ -48,6 +53,7 @@ public class Controlador_TablaCli implements ActionListener, MouseListener{
         this.tablacli.atras.addActionListener(this);
     }
     
+    //Con este mouseclicked controlamos que podamos clickar sobre una tabla para poder recoger esos datos y mostrarlos en otro campo
      public void mouseClicked(MouseEvent e) {
         if( e.getButton()== 1)//boton izquierdo
         {
@@ -64,8 +70,10 @@ public class Controlador_TablaCli implements ActionListener, MouseListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        //Switch-case para controlar qué hace cada botón en la vista exactamente
         switch (AccionMVC.valueOf(e.getActionCommand())){
                 
+            //Botón Atrás que nos cierra la vista
             case tablacliATRAS:
                 
                 this.tablacli.dispose();

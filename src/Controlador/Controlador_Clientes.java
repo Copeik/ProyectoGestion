@@ -90,6 +90,7 @@ public class Controlador_Clientes implements ActionListener, MouseListener{
         
           //Switch-case para controlar qué hace cada botón en la vista exactamente
         switch (Controlador_Clientes.AccionMVC.valueOf(e.getActionCommand())){
+             //Botón de Atrás que nos cierra la vista actual y nos abre otra vez la de opciones
             case clientesATRAS:                
                 this.clientes.dispose();
                 new Controlador_Principal( new Principal() ).principal() ;
@@ -148,7 +149,7 @@ public class Controlador_Clientes implements ActionListener, MouseListener{
                     this.clientes.dni.setText("");
                     this.clientes.nombre.setText("");
                 }else{
-                    //Usamos un método llamado ClientSearch para buscar el clienteo en la base de datos
+                    //Usamos un método llamado ClientSearch para buscar el cliente en la base de datos
                    Cliente client= a.ClientSearch(this.clientes.DNIBusqueda.getText());
                     this.clientes.dni.setText(client.getDni());
                     this.clientes.nombre.setText(client.getNombre());

@@ -20,18 +20,20 @@ import java.awt.event.MouseListener;
  * @author qiqer
  */
 public class Controlador_Facturas implements ActionListener, MouseListener{
+    
     public static String factura_M;
     
+    //Creamos los objetos para poder usar los métodos y el de la vista
         Modelo_Facturas f= new Modelo_Facturas();
         Facturas facturas;
         
+        //Creamos el controlador
     Controlador_Facturas(Facturas facturas) {
         this.facturas = facturas;
     }
         
+    //Necesitamos un Enum para la lista de posibles acciones en la vista
         public enum AccionMVC{
-        
-        //Acciones Vista opciones
         facturasATRAS,
         facturasCREAR,
         facturasMODIFICAR,
@@ -39,6 +41,7 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
         facturasBUSCAR,
         }
         
+        //Aqui vendrán recogidos todas las posibles acciones de la vista y su estado
         public void facturas()
         {
             facturas.setVisible(true);
@@ -60,10 +63,12 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
             this.facturas.buscar.setActionCommand("facturasBUSCAR");
             this.facturas.buscar.addActionListener(this);
             
+            //Aqui es donde mediante un método imprimimos la tabla con todos los datos de la base de datos
             this.facturas.listafacturas.addMouseListener(this);
             this.facturas.listafacturas.setModel(f.getTabla());
         }
         
+        //Con este mouseclicked controlamos que podamos clickar sobre una tabla para poder recoger esos datos y mostrarlos en otro campo
     public void mouseClicked(MouseEvent e) {
         if( e.getButton()== 1)//boton izquierdo
         {
@@ -86,11 +91,14 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
     
     public void actionPerformed(ActionEvent e) {
         
+        //Switch-case para controlar qué hace cada botón en la vista exactamente
         switch (Controlador_Facturas.AccionMVC.valueOf(e.getActionCommand())){
             case facturasATRAS:                
                 this.facturas.dispose();
                 new Controlador_Principal( new Principal() ).principal() ;
             break;
+            
+            //Botón Crear que nos llevará a la vista de detalles para crear la factura
             case facturasCREAR:
                 if (this.facturas.codfacturabuscar.getText().equals("")) {
                     this.facturas.ok.setText("Introduce un codigo nuevo abajo");
@@ -104,13 +112,17 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
                 
                 //new Controlador_Detalle(new Detalle()).detalle();
             break;
+            
+            //Botón Modificar que nos permitirá modificar los datos de una factura
             case facturasMODIFICAR:
                 if (f.FacExists(this.facturas.codfactura.getText()))
                  {
                      if (f.FacExists(this.facturas.codfactura.getText()))
                      {
+                     //Usamos un update para actualizar la tabla cogiendo los datos metidos en los campos
                      this.f.FacUpdate(this.facturas.codfactura.getText(), this.facturas.dni.getText(),Double.parseDouble(this.facturas.precio.getText()));
                      this.facturas.ok.setText("Modificada");
+                     //Actualizamos la tabla
                      this.facturas.listafacturas.setModel(f.getTabla());
                      }
                      else
@@ -123,11 +135,15 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
                      this.facturas.ok.setText("No modificada");
                  }
             break;
+            
+            //Botón Eliminar que nos permite eliminar una factura de la base de datos
             case facturasELIMINAR:
                 if (f.FacExists(this.facturas.codfactura.getText()))
                 {
+                    //Usamos un Delete para eliminar la factura de la base de datos
                     this.f.FacDelete(this.facturas.codfactura.getText());
                     this.facturas.ok.setText("Eliminada");
+                    //Actualizamos la tabla
                     this.facturas.listafacturas.setModel(f.getTabla());
                 }
                 else
@@ -135,12 +151,15 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
                     this.facturas.ok.setText("No eliminada");
                 }
             break;
+            
+            //Botón Buscar que nos permite buscar una factura en la base de datos
             case facturasBUSCAR:
                 if (this.facturas.codfacturabuscar.getText().equals("")) {
                     this.facturas.dni.setText("");
                     this.facturas.precio.setText("");
                     this.facturas.codfactura.setText("");
                 }else if(this.f.FacExists(this.facturas.codfacturabuscar.getText())){
+                    //Usamos un método llamado FacSearch para buscar la factura en la base de datos
                    Factura fact= f.FacSearch(this.facturas.codfacturabuscar.getText());
                     this.facturas.codfactura.setText(fact.getCodigofac());
                     this.facturas.dni.setText(fact.getdni());

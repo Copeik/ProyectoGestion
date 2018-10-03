@@ -20,6 +20,7 @@ public class Modelo_Detalles extends database {
         int count;
         public static double Completo=0;
             
+        //Método que nos permite coger todos los datos de la tabla detalle
     public DefaultTableModel getTabla(String factura)
     {
       DefaultTableModel tablemodel = new DefaultTableModel();
@@ -58,15 +59,18 @@ public class Modelo_Detalles extends database {
         return tablemodel;
     } 
 
+    //Método que nos permite insertar en la tabla Detalles los datos que nos vengan como parámetro a través de la vista
      public boolean DetInsert (int codarticulo, String codigofac2,double preciofinal)
     {
         boolean res = false;
         
+        //Usamos un insert para poder guardar el Detalle
         String q = "INSERT INTO detalles VALUES ("+codarticulo+",'"+codigofac2+"',"+preciofinal+")";
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
             pstm.execute();
             System.out.println("Insertado con exito");
+            //Usamos esta variable para ir sumando los precios de los artículos para tener el precio final de la factura
             Completo = Completo + preciofinal;
             res=true; 
             pstm.close();
@@ -77,13 +81,14 @@ public class Modelo_Detalles extends database {
          }
          return res;
 }
-     
+        //Método que nos permite eliminar los datos de la tabla Detalle
           public boolean DetDelete (String codigofac2,int codigoart)
     {
         boolean res = false;
         int idc=0;
         double preciodelete=0;
         try{
+            //Para esto usamos antes un select para poder sacar el precio de lo que cuesta el artículo e irlo restando según quitemos de nuestra tabla para la factura
          PreparedStatement pstm2 = this.getConnection().prepareStatement( "SELECT preciofinal FROM detalles WHERE codigofac2='"+codigofac2+"' AND codarticulo="+codigoart);
          ResultSet res2 = pstm2.executeQuery();
          res2.next();
@@ -93,7 +98,7 @@ public class Modelo_Detalles extends database {
          System.err.println( e.getMessage() );
       }
         
-        
+        //Usamos el Delete para eliminar el artículo de la vista Detalle y de nuestra tabla de selección de factura
         String q = "DELETE FROM detalles WHERE codigofac2='"+codigofac2+"' AND codarticulo="+codigoart;
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
@@ -107,6 +112,7 @@ public class Modelo_Detalles extends database {
          }
          return res;
 }
+          //Método que nos permite borrar todos los datos de una factura
           public boolean DetDelete2 (String codigofac2)
     {
         boolean res = false;
@@ -123,10 +129,12 @@ public class Modelo_Detalles extends database {
          }
          return res;
 }
+          //Método para actualizar la tabla facturas
           public boolean DetUpdate (int codarticulo, String codigofac2,double preciofinal)
     {
         boolean res = false;
         int idc=0;
+        //Usamos un Update para poder actualizarlo mediante los datos dados
         String q = "UPDATE facturas \n" +
         "SET codarticulo="+codarticulo+", codigofac2='"+codigofac2+"', preciofinal="+preciofinal+" \n" +
         "WHERE codigofac2='"+codigofac2+"' AND codarticulo="+codarticulo ;
@@ -143,6 +151,7 @@ public class Modelo_Detalles extends database {
          }
          return res;
     }
+          //Método que nos permite sacar el precio total de la factura cuando vayamos a terminarla
           public double getTotal (String codfactura)
           {
               double totalisimo=0;

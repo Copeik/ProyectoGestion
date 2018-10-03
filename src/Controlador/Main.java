@@ -10,7 +10,7 @@ import Vistas.Principal;
 
 /**
  *
- * @author danireySvQ
+ * @author qiqer
  */
 public class Main {
     

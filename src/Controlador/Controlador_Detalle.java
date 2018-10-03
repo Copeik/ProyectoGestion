@@ -146,7 +146,7 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
                 new Controlador_TablaCli(new TablaCli()).tablacli();
                 break;
                 
-                //Botón de Atrás que nos cierra la vista actual y nos abre otra vez la de opciones
+                //Botón de Atrás que nos cierra la vista actual y nos abre otra vez la de facturas
             case detalleATRAS:
                 
                 //En este caso también nos borra lo que hayamos ido guardando en la base de datos si no le hemos dado a enviar

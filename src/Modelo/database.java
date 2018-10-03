@@ -27,7 +27,7 @@ public class database {
       try{
          //obtenemos el driver de para mysql
          Class.forName("com.mysql.jdbc.Driver");
-         //obtenemos la conexiÃ³n
+         //obtenemos la conexión
          conn = (Connection) DriverManager.getConnection(url,login,password);
          if (conn!=null){
             System.out.println("OK base de datos "+bd+" listo");
@@ -40,6 +40,7 @@ public class database {
     }
      public Connection getConnection()
     {
+        //Ejecutamos la conexión
         return this.conn;
     }
 }
