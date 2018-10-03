@@ -36,6 +36,7 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
         Modelo_Detalles d= new Modelo_Detalles();
         Modelo_Articulos art=new Modelo_Articulos();
         Detalle det;
+        Facturas fac;
         
     public Controlador_Detalle(Detalle detalle) {
         this.det = detalle;
@@ -150,6 +151,7 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
                 }else{
                     this.f.FacInsert(factura_M, this.det.nomfac.getText(), Double.parseDouble(this.det.Total.getText()));
                     this.det.dispose();
+                    new Controlador_Facturas(new Facturas()).facturas();
                 }
                
                 break;

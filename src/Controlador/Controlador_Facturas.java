@@ -70,8 +70,8 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
              int fila = this.facturas.listafacturas.rowAtPoint(e.getPoint());
              if (fila > -1){                
                 this.facturas.codfactura.setText( String.valueOf( this.facturas.listafacturas.getValueAt(fila, 0) ));
-                this.facturas.precio.setText( String.valueOf( this.facturas.listafacturas.getValueAt(fila, 1) ));
-                this.facturas.dni.setText( String.valueOf( this.facturas.listafacturas.getValueAt(fila, 2) ));
+                this.facturas.dni.setText( String.valueOf( this.facturas.listafacturas.getValueAt(fila, 1) ));
+                this.facturas.precio.setText( String.valueOf( this.facturas.listafacturas.getValueAt(fila, 2) ));
              }
         }
     }
@@ -93,7 +93,7 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
             break;
             case facturasCREAR:
                 if (this.facturas.codfacturabuscar.getText().equals("")) {
-                    
+                    this.facturas.ok.setText("Introduce un codigo nuevo abajo");
                 }else if(f.FacExists(this.facturas.codfacturabuscar.getText())==false){
                     factura_M=this.facturas.codfacturabuscar.getText();
                     this.facturas.dispose();
@@ -109,7 +109,7 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
                  {
                      if (f.FacExists(this.facturas.codfactura.getText()))
                      {
-                     this.f.FacUpdate(this.facturas.codfactura.getText(), this.facturas.dni.getText(), Double.parseDouble(this.facturas.precio.getText()));
+                     this.f.FacUpdate(this.facturas.codfactura.getText(), this.facturas.dni.getText(),Double.parseDouble(this.facturas.precio.getText()));
                      this.facturas.ok.setText("Modificada");
                      this.facturas.listafacturas.setModel(f.getTabla());
                      }

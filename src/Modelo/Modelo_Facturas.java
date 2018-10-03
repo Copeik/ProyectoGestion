@@ -117,9 +117,7 @@ public class Modelo_Facturas extends database {
     {
         boolean res = false;
         int idc=0;
-        String q = "UPDATE facturas \n" +
-        "SET codigofac='"+codigofac+"', nombrecli='"+nombrecli+"', precioini="+total+" \n" +
-        "WHERE codigofac='"+codigofac+"'" ;
+        String q = "UPDATE facturas SET codigofac='"+codigofac+"', nombrecli='"+nombrecli+"', total="+total+" WHERE codigofac='"+codigofac+"'" ;
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
             pstm.execute();
