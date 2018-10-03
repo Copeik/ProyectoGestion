@@ -149,6 +149,7 @@ public class Controlador_Detalle implements ActionListener, MouseListener{
                     
                 }else{
                     this.f.FacInsert(factura_M, this.det.nomfac.getText(), Double.parseDouble(this.det.Total.getText()));
+                    this.det.dispose();
                 }
                
                 break;

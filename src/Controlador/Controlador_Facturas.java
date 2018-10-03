@@ -109,6 +109,7 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
                  {
                      if (f.FacExists(this.facturas.codfactura.getText()))
                      {
+                     this.f.FacUpdate(this.facturas.codfactura.getText(), this.facturas.dni.getText(), Double.parseDouble(this.facturas.precio.getText()));
                      this.facturas.ok.setText("Modificada");
                      this.facturas.listafacturas.setModel(f.getTabla());
                      }
@@ -125,6 +126,7 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
             case facturasELIMINAR:
                 if (f.FacExists(this.facturas.codfactura.getText()))
                 {
+                    this.f.FacDelete(this.facturas.codfactura.getText());
                     this.facturas.ok.setText("Eliminada");
                     this.facturas.listafacturas.setModel(f.getTabla());
                 }
@@ -138,7 +140,7 @@ public class Controlador_Facturas implements ActionListener, MouseListener{
                     this.facturas.dni.setText("");
                     this.facturas.precio.setText("");
                     this.facturas.codfactura.setText("");
-                }else{
+                }else if(this.f.FacExists(this.facturas.codfacturabuscar.getText())){
                    Factura fact= f.FacSearch(this.facturas.codfacturabuscar.getText());
                     this.facturas.codfactura.setText(fact.getCodigofac());
                     this.facturas.dni.setText(fact.getdni());

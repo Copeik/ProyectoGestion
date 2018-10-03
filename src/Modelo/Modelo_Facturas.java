@@ -113,12 +113,12 @@ public class Modelo_Facturas extends database {
          }
          return res;
 }
-          public boolean FacUpdate (int codigofac, String nombrecli,double total)
+          public boolean FacUpdate (String codigofac, String nombrecli,double total)
     {
         boolean res = false;
         int idc=0;
         String q = "UPDATE facturas \n" +
-        "SET codigofac="+codigofac+", nombreart='"+nombrecli+"', precioini="+total+" \n" +
+        "SET codigofac='"+codigofac+"', nombrecli='"+nombrecli+"', precioini="+total+" \n" +
         "WHERE codigofac='"+codigofac+"'" ;
         try {
             PreparedStatement pstm = this.getConnection().prepareStatement(q);
